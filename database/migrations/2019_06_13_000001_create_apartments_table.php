@@ -25,7 +25,7 @@ class CreateApartmentsTable extends Migration
             $table->integer('area_sm');
             $table->float('address_lat', 10, 6);
             $table->float('address_lon', 10, 6);
-            $table->boolean('image');
+            $table->string('image');
             $table->boolean('wifi');
             $table->boolean('car_p');
             $table->boolean('pool');
