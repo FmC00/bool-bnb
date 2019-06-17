@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 
 use App\Apartment;
+use App\User;
+use App\Service;
 
 class ApartmentTableSeeder extends Seeder
 {
@@ -15,10 +17,13 @@ class ApartmentTableSeeder extends Seeder
     {
         factory(Apartment::class, 30)->make()->each(function ($apartment){
 
-        $user = App\User::inRandomOrder()->first();
+        $user = User::inRandomOrder()->first();
         $apartment->user()->associate($user);
         $apartment->save();
 
+        $services = Service::inRandomOrder()->take(rand(1,3))->get();
+        $apartment->services()->attach($services);
+
         });
-    }    
+    }
 }
