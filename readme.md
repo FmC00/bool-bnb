@@ -18,7 +18,7 @@ https://docs.google.com/document/d/1XGHTa1inNEMFxGzDi_blpwdztwA9hqnuqF6RCfODDBQ/
 $ git clone https://github.com/FmC00/bool-bnb.git
 $ composer install
 $ npm install
-$ mv .env.example .env
+$ cp .env.example .env
 ```
 
 Create new Database, and insert db data in .env file as follow:
