@@ -7,7 +7,8 @@
      <!-- CSS: MY CSS -->
      <link rel="stylesheet" href="{{ mix('css/app.css') }}">
      <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
-     <title>BoolBnB</title>
+     <link rel="shortcut icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico"> 
+     <title>Case vacanze, alloggi, esperienze e luoghi - Airbnb</title>
    </head>
    <body>
      <div id="background-top" class="container-fluid vh-100">
