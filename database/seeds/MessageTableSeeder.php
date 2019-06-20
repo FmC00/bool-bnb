@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use App\Message;
+use App\User;
 
 class MessageTableSeeder extends Seeder
 {
@@ -15,10 +16,10 @@ class MessageTableSeeder extends Seeder
     {
         factory(Message::class, 100)->make()->each(function ($message){
 
-        $user = App\User::inRandomOrder()->first();
+        $user = User::inRandomOrder()->first();
         $message->user()->associate($user);
         $message->save();
-        
+
         });
     }
 }

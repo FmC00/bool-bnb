@@ -2,9 +2,10 @@
 
 namespace App;
 
-use App\User;
-
 use Illuminate\Database\Eloquent\Model;
+
+use App\User;
+use App\Service;
 
 class Apartment extends Model
 {
@@ -18,16 +19,14 @@ class Apartment extends Model
     'area_sm',
     'address_lat',
     'address_lon',
-    'image',
-    'wifi',
-    'car_p',
-    'pool',
-    'reception',
-    'sauna',
-    'sea_view'
+    'image'
   ];
 
   public function user() {
     return $this->belongsTo(User::class);
+  }
+
+  public function services() {
+    return $this->belongsToMany(Service::class);
   }
 }

@@ -15,12 +15,6 @@ $factory->define(Apartment::class, function (Faker $faker) {
         'area_sm' => $faker->numberBetween($min = 40, $max = 300),
         'address_lat' => $faker->randomFloat($nbMaxDecimals = 6, $min = -90, $max = 90),
         'address_lon' => $faker->randomFloat($nbMaxDecimals = 6, $min = -180, $max = 180),
-        'image' => $faker->image($dir = '/tmp', $width = 1080, $height = 720),
-        'wifi' => $faker->boolean,
-        'car_p' => $faker->boolean,
-        'pool' => $faker->boolean($chanceOfGettingTrue = 30),
-        'reception' => $faker->boolean,
-        'sauna' => $faker->boolean($chanceOfGettingTrue = 30),
-        'sea_view' => $faker->boolean($chanceOfGettingTrue = 30)
+        'image' => $faker->image($dir = '/tmp', $width = 1080, $height = 720)
     ];
 });

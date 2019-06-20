@@ -8,6 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Message::class, function (Faker $faker) {
     return [
       'mail' => $faker->email,
+      'name' => $faker->name,
       'content' => $faker->realText($maxNbChars = 1000),
     ];
 });
