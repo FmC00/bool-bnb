@@ -10700,3 +10700,57 @@ main.py-4 {
   background-image: url("https://a0.muscache.com/4ea/air/v2/pictures/9c53bf65-1ad1-4080-b31e-2e082de08404.jpg?t=r:w3100-h2074-sfit,e:fjpg-c80");
 }
 
+.back-top nav a {
+  color: #fff;
+}
+
+#LoggedDropdown a.dropdown-item {
+  color: black;
+}
+
+#header-logo a svg {
+  height: 100%;
+}
+
+.btn-bnb {
+  background-color: #FF595F;
+  color: #fff;
+}
+
+.col-bnb {
+  color: #FF595F;
+}
+
+.form-control:focus {
+  border-color: rgba(255, 89, 95, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(255, 89, 95, 0.25);
+}
+
+.btn:focus,
+.btn.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 89, 95, 0.25);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.card-header {
+  color: #fff;
+  background-color: #FF595F;
+  border-bottom: 1px solid rgba(255, 89, 95, 0.25);
+}
+
+.card-body {
+  color: #FF595F;
+  border-color: #FF595F;
+}
+
+.apartment-card {
+  width: 260px;
+  height: 280px;
+}
+
+.apartment-card .stars {
+  font-size: 10px;
+}
