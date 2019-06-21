@@ -1,3 +1,4 @@
+@include('components.apartment-card-component')
 <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
@@ -113,7 +114,20 @@
        </header>
      </div>
      <div class="container-fluid">
-       @yield('content')
+       <div class="col-12 mb-5">
+         <h1 class="d-flex justify-content-center justify-content-md-start pt-5">Alloggi in tutto il mondo</h1>
+       </div>
+       <div id="apartments-container" class="col-12 d-flex flex-wrap justify-content-center justify-content-md-start">
+         {{-- card appartamento singolo (Vue component)--}}
+         @for ($i=0; $i < 10; $i++)
+           <apartment-card
+            title = 'Villetta con piscina in pieno centro'
+            image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
+            location = 'Roma, Italia'>
+           </apartment-card>
+         @endfor
+         {{-- fine card appartamento singolo --}}
+       </div>
        <footer class="row">
          <div class="col-12">
        </footer>
