@@ -161,13 +161,13 @@
        </div>
        <div id="apartments-container" class="col-12 d-flex flex-wrap justify-content-center justify-content-md-start">
          {{-- card appartamento singolo (Vue component)--}}
-         @for ($i=0; $i < 10; $i++)
+         @foreach ($apartments as $apartment)
            <apartment-card
-            title = 'Villetta con piscina in pieno centro'
-            image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
-            location = 'Roma, Italia'>
-           </apartment-card>
-         @endfor
+           title = {{ $apartment -> name }}
+           image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
+           location = 'Roma, Italia'>
+         </apartment-card>
+         @endforeach
          {{-- fine card appartamento singolo --}}
        </div>
        <footer class="row">
