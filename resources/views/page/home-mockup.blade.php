@@ -177,7 +177,7 @@
      <footer class="row">
       <div class="col-12">
         <h1>My Footer</h1>
+      </div>
      </footer>
-   </div>
     </body>
  </html>
