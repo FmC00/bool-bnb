@@ -10683,15 +10683,6 @@ main.py-4 {
   background: white;
 }
 
-.apartment-card {
-  width: 260px;
-  height: 280px;
-}
-
-.apartment-card .stars {
-  font-size: 10px;
-}
-
 .back-top {
   background-color: transparent;
   background-repeat: no-repeat;
@@ -10754,3 +10745,4 @@ main.py-4 {
 .apartment-card .stars {
   font-size: 10px;
 }
+
