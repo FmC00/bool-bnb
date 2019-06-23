@@ -1,0 +1,28 @@
+#dashboard-left {
+  background-color: #2a4054;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  button {
+    background-color: #ee555d;
+    color: white;
+  }
+}
+
+
+
+#dashboard-right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow-y: scroll;
+
+  h4 {
+    color: grey;
+    font-weight: 700;
+    font-size: 30px;
+  }
+  input {
+    background-color: #ee555d;
+    color: white;
+  }
+}
