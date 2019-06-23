@@ -16,3 +16,5 @@ Route::get('/', 'AllController@showHome')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/myDashboard', 'HomeController@mydashboard')->name('myDashboard');

@@ -17,8 +17,11 @@
    <body>
      <div class="container-fluid">
        <div id="row-dashboard" class="row p-5 bg-secondary">
-         <div id="dashboard-left" class="col-3 vh-100 pl-4">
-           <h4 class="mt-5 text-white">Benvenuto Michele</h4>
+         <div id="dashboard-left" class="col-3 vh-100 text-center">
+           <div class="w-100 d-flex justify-content-center pt-5">
+             <a href="{{route('home')}}"><i class="fas fa-home text-white mr-2"></i>Home</a>
+           </div>
+           <h4 class="mt-5 text-white">Benvenuto {{ Auth::user()->name }}</h4>
            <div class="w-100">
              <a href="#"><button class="btn w-75 mt-5">Aggiungi appartmento</button></a>
              <a href="#"><button class="btn w-75 mt-5">Sponsorizza appartmento</button></a>
@@ -41,7 +44,7 @@
                     image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
                     location = 'Roma, Italia' class="m-0">
                    </apartment-card>
-                   <input class="btn ml-2" type="text" name="" value="Visualizza">
+                   <input class="btn ml-2" type="submit" name="" value="Visualizza">
                  </div>
 
                @endfor
