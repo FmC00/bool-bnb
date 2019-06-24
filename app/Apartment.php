@@ -13,6 +13,7 @@ class Apartment extends Model
     'user_id',
     'name',
     'description',
+    'price',
     'rooms_number',
     'guests_number',
     'bathrooms',

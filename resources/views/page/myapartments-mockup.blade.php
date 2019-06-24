@@ -11,10 +11,11 @@
      </h4>
     <hr class="w-100 ml-0 border">
      <div id="apartments-container" class="w-100 d-flex flex-wrap">
-        @for ($i=0; $i < 5; $i++)
+
+        @foreach (Auth::user()->apartments as $apartment)
           <div class="m-2 border">
             <apartment-card
-             title = 'Villetta con piscina in pieno centro'
+             title = '{{ $apartment->name }}'
              image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
              location = 'Roma, Italia' class="m-0">
             </apartment-card>
@@ -24,10 +25,8 @@
               <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-bullhorn"></i></a></button>
               <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-chart-line"></i></a></button>
             </div>
-
           </div>
-
-        @endfor
+        @endforeach
       </div>
   </div>
 @endsection
