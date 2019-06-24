@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Apartment;
 use App\Service;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -36,7 +37,39 @@ class HomeController extends Controller
 
     public function addApartment()
     {
-      return view('page.add-apartment-mockup');
+      $services = Service::all();
+      return view('page.add-apartment-mockup', compact('services'));
+    }
+
+    public function store(Request $request)
+    {
+
+      $validateData = $request->validate([
+
+        'name'=> 'required',
+        'description' => 'required',
+        'price' => 'required',
+        'rooms_number'=> 'required',
+        'guests_number'=> 'required',
+        'bathrooms'=> 'required',
+        'area_sm'=> 'required',
+        'address_lat' => '',
+        'address_lon'=> '',
+        'image' => '',
+        'service' => ''
+      ]);
+
+      $apartment = Apartment::make($validateData);
+      $apartment->user_id = Auth::user()->id;
+      $apartment->address_lat = 35;
+      $apartment->address_lon = 35;
+      $apartment->image = "image";
+
+      $apartment ->save();
+
+      $services = Service::find($validateData['service']);
+      $apartment->services()->attach($services);
+      return redirect('/myDashboard');
     }
 
     public function sponsorApartment()
@@ -52,36 +85,6 @@ class HomeController extends Controller
     public function messagesApartment()
     {
       return view('page.messages-apartment-mockup');
-    }
-
-    public function create()
-    {
-      $apartments = Apartment::all();
-      $services = Service::all();
-
-      return view('pages.', compact('apartments', 'services'));
-    }
-
-    public function store(Request $request)
-    {
-      $validateData = $request->validate([
-
-        'user_id'=> 'required',
-        'name'=> 'required',
-        'description' => 'required',
-        'rooms_number'=> 'required',
-        'guests_number'=> 'required',
-        'bathrooms'=> 'required',
-        'area_sm'=> 'required',
-        'address_lat' => 'required',
-        'address_lon'=> 'required',
-        'image' => 'required'
-        ]);
-
-      $apartments = Apartment::create($validateData);
-      $services = Service::find($validateData['service']);
-      $apartments->services()->attach($services);
-      return redirect('/');
     }
 
     public function edit($id)

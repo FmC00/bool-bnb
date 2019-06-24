@@ -19,6 +19,7 @@ class CreateApartmentsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
             $table->text('description');
+            $table->float('price', 5, 2);
             $table->integer('rooms_number');
             $table->integer('guests_number');
             $table->integer('bathrooms');
