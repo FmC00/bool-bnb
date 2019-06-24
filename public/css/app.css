@@ -10688,7 +10688,37 @@ main.py-4 {
   border-bottom: 1px solid white;
 }
 
-.head-top #hamburger-menu-container {
+.head-top #hamburger-menu-container a {
+  color: grey;
+  font-size: 18px;
+}
+
+.head-top #hamburger-menu-container #hamburger-logo-header {
+  height: 80px;
+}
+
+.head-top #hamburger-menu-container #hamburger-logo-header #logo-hamburger {
+  width: 50px;
+}
+
+.head-top #hamburger-menu-container #hamburger-logo-header #logo-hamburger #logo-svg {
+  fill: white;
+}
+
+.head-top #hamburger-menu-container #hamburger-logo-header #logo-hamburger #logo-svg.fill-red {
+  fill: red;
+}
+
+.head-top #hamburger-menu-container #hamburger-logo-header #hamb-arrow {
+  color: white;
+}
+
+.head-top #hamburger-menu-container #hamburger-logo-header #hamb-arrow.grey-arrow {
+  color: grey;
+}
+
+.head-top #hamburger-menu-container #hamburger-navbar {
+  display: none;
   background: white;
 }
 

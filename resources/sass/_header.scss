@@ -27,8 +27,40 @@ main.py-4 {
     border-bottom: 1px solid white;
   }
 
-  #hamburger-menu-container {
-    background: white;
+
+
+  #hamburger-menu-container{
+
+
+    a{
+      color: grey;
+      font-size: 18px
+    }
+    #hamburger-logo-header{
+      height: 80px;
+
+      #logo-hamburger{
+        width: 50px;
+
+        #logo-svg{
+          fill: white;
+        }
+        #logo-svg.fill-red{
+          fill: red;
+        }
+
+      }
+      #hamb-arrow{
+        color: white;
+      }
+      #hamb-arrow.grey-arrow{
+        color: grey;
+      }
+    }
+    #hamburger-navbar{
+      display: none;
+      background: white;
+    }
   }
 }
 
