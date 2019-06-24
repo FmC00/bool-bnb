@@ -17,4 +17,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/myDashboard', 'HomeController@mydashboard')->name('myDashboard');
+Route::get('/myDashboard', 'HomeController@myDashboard')->name('myDashboard');
+Route::get('/addApartment', 'HomeController@addApartment')->name('addApartment');
+Route::get('/sponsorApartment', 'HomeController@sponsorApartment')->name('sponsorApartment');
+Route::get('/statsApartment', 'HomeController@statsApartment')->name('statsApartment');
+Route::get('/messagesApartment', 'HomeController@messagesApartment')->name('messagesApartment');

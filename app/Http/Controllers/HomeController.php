@@ -31,7 +31,27 @@ class HomeController extends Controller
 
     public function myDashboard()
     {
-      return view('page.dashboard');
+      return view('page.myapartments-mockup');
+    }
+
+    public function addApartment()
+    {
+      return view('page.add-apartment-mockup');
+    }
+
+    public function sponsorApartment()
+    {
+      return view('page.sponsor-apartment-mockup');
+    }
+
+    public function statsApartment()
+    {
+      return view('page.stats-apartment-mockup');
+    }
+
+    public function messagesApartment()
+    {
+      return view('page.messages-apartment-mockup');
     }
 
     public function create()
