@@ -23,3 +23,4 @@ Route::post('/addApartment', 'HomeController@store')->name('storeApartment');
 Route::get('/sponsorApartment', 'HomeController@sponsorApartment')->name('sponsorApartment');
 Route::get('/statsApartment', 'HomeController@statsApartment')->name('statsApartment');
 Route::get('/messagesApartment', 'HomeController@messagesApartment')->name('messagesApartment');
+Route::get('/detailApartment', 'HomeController@detailApartment')->name('detailApartment');

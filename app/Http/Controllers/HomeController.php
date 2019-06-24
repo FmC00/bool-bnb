@@ -38,7 +38,13 @@ class HomeController extends Controller
     public function addApartment()
     {
       $services = Service::all();
+
       return view('page.add-apartment-mockup', compact('services'));
+    }
+
+    public function detailApartment()
+    {
+      return view('page.detail-apartment-mockup');
     }
 
     public function store(Request $request)

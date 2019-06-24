@@ -53,11 +53,22 @@
     font-size: 30px;
   }
   input {
-    // background-color: #ee555d;
     color: #ee555d;
   }
 
   hr {
     border: 1px solid #ee555d;
+  }
+
+  .dashboard-title {
+
+    button {
+      background-color: #ee555d;
+      color: white;
+
+      i::before {
+        margin-right: 10px;
+      }
+    }
   }
 }

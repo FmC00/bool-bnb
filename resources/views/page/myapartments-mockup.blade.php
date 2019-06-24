@@ -21,9 +21,9 @@
             </apartment-card>
 
             <div class="d-flex justify-content-center mb-3">
-              <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-info-circle"></i></a></button>
-              <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-bullhorn"></i></a></button>
-              <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-chart-line"></i></a></button>
+              <button class="btn btn-bnb ml-2"><a href="{{ route('detailApartment') }}"><i class="fas fa-info-circle"></i></a></button>
+              <button class="btn btn-bnb ml-2"><a href="{{ route('sponsorApartment') }}"><i class="fas fa-bullhorn"></i></a></button>
+              <button class="btn btn-bnb ml-2"><a href="{{ route('statsApartment') }}"><i class="fas fa-chart-line"></i></a></button>
             </div>
           </div>
         @endforeach

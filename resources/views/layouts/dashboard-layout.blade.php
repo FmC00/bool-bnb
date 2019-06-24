@@ -12,7 +12,7 @@
      <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
      <!-- IMG: ICON -->
      <link rel="shortcut icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
-     <title>La mia Dashboard Host</title>
+     <title>My Dashboard</title>
    </head>
    <body>
      <div class="container-fluid">
@@ -40,8 +40,6 @@
            <hr class="w-75 mx-auto">
            <div class="w-100">
              <button class="btn w-75 mt-5"><a href="{{ route('addApartment') }}"><i class="fas fa-plus-circle"></i>Aggiungi appartamento</a></button>
-             <button class="btn w-75 mt-5"><a href="{{ route('sponsorApartment') }}"><i class="fas fa-bullhorn"></i>Sponsorizza appartamento</a></button>
-             <button class="btn w-75 mt-5"><a href="{{ route('statsApartment') }}"><i class="fas fa-chart-line"></i>Statistiche appartamento</a></button>
              <button class="btn w-75 mt-5"><a href="{{ route('messagesApartment') }}"><i class="fas fa-envelope"></i>I miei messaggi</a></button>
            </div>
          </div>
