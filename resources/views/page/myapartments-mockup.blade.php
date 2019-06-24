@@ -9,11 +9,11 @@
        </span>
        I miei appartamenti
      </h4>
-    <hr class="w-100 ml-0 border">
+    <hr class="w-100 ml-0">
      <div id="apartments-container" class="w-100 d-flex flex-wrap">
 
         @foreach (Auth::user()->apartments as $apartment)
-          <div class="m-2 border">
+          <div class="m-2 card-apartment rounded">
             <apartment-card
              title = '{{ $apartment->name }}'
              image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
@@ -24,6 +24,8 @@
               <button class="btn btn-bnb ml-2"><a href="{{ route('detailApartment') }}"><i class="fas fa-info-circle"></i></a></button>
               <button class="btn btn-bnb ml-2"><a href="{{ route('sponsorApartment') }}"><i class="fas fa-bullhorn"></i></a></button>
               <button class="btn btn-bnb ml-2"><a href="{{ route('statsApartment') }}"><i class="fas fa-chart-line"></i></a></button>
+              <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-envelope"></i></a></button>
+              <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-trash-alt"></i></a></button>
             </div>
           </div>
         @endforeach

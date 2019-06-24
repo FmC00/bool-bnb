@@ -84,6 +84,11 @@ main.py-4 {
   a.dropdown-item {
     color: black;
   }
+
+  a.dropdown-item:hover {
+    color: $col-w;
+    background-color: $bnb1;
+  }
 }
 
 #header-logo {
@@ -129,8 +134,4 @@ main.py-4 {
   height: 40px;
   width: 40px;
   border-radius: 40px;
-}
-
-.dropdown-item:hover {
-  background-color: $bnb1;
 }

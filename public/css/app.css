@@ -10738,6 +10738,11 @@ main.py-4 {
   color: black;
 }
 
+#LoggedDropdown a.dropdown-item:hover {
+  color: #fff;
+  background-color: #FF595F;
+}
+
 #header-logo a svg {
   height: 100%;
 }
@@ -10782,10 +10787,6 @@ main.py-4 {
   height: 40px;
   width: 40px;
   border-radius: 40px;
-}
-
-.dropdown-item:hover {
-  background-color: #FF595F;
 }
 
 .apartment-card {
@@ -10866,5 +10867,14 @@ main.py-4 {
 
 #dashboard-right .dashboard-title button i::before {
   margin-right: 10px;
+}
+
+#dashboard-right .card-apartment {
+  border: 1px solid rgba(255, 89, 95, 0.6) !important;
+}
+
+#dashboard-right .card-apartment:hover {
+  background-color: rgba(255, 89, 95, 0.4) !important;
+  cursor: pointer;
 }
 

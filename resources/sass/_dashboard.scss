@@ -71,4 +71,12 @@
       }
     }
   }
+
+  .card-apartment {
+    border: 1px solid $bnb-rgba6 !important;
+  }
+  .card-apartment:hover {
+    background-color: $bnb-rgba4 !important;
+    cursor: pointer;
+  }
 }
