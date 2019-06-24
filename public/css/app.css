@@ -10789,11 +10789,42 @@ main.py-4 {
   background-color: #2a4054;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  max-width: 20%;
 }
 
 #dashboard-left button {
   background-color: #ee555d;
   color: white;
+}
+
+#dashboard-left button i::before {
+  margin-right: 10px;
+}
+
+#dashboard-left .btn-option {
+  background-color: white;
+  color: #ee555d;
+}
+
+#dashboard-left .btn-option .fas::before {
+  color: #ee555d;
+}
+
+#dashboard-left .btn-option a {
+  color: #ee555d;
+}
+
+#dashboard-left hr {
+  border: 1px solid #ee555d;
+}
+
+#dashboard-left .user-img {
+  margin-top: 20px;
+  margin: auto;
+  border: 1px solid #ee555d;
+  height: 70px;
+  width: 70px;
+  border-radius: 40px;
 }
 
 #dashboard-right {
@@ -10809,7 +10840,10 @@ main.py-4 {
 }
 
 #dashboard-right input {
-  background-color: #ee555d;
-  color: white;
+  color: #ee555d;
+}
+
+#dashboard-right hr {
+  border: 1px solid #ee555d;
 }
 

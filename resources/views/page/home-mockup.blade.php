@@ -41,21 +41,12 @@
                        <a class="dropdown-item" href="">
                           Pubblica il tuo annuncio
                        </a>
-                       <a class="dropdown-item" href="">
-                          Offri un'esperienza
-                       </a>
                      </div>
-                     <a class="mr-4" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                         Salvati <span class="caret"></span>
-                     </a>
-                     <a class="mr-4" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                         Viaggi <span class="caret"></span>
-                     </a>
                      <a class="mr-4" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                          Messaggi <span class="caret"></span>
                      </a>
                      <a class="mr-4" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                         Aiuto <span class="caret"></span>
+                         Appartamenti <span class="caret"></span>
                      </a>
                  </span>
                  <span class="nav-item dropdown">
@@ -66,21 +57,6 @@
                      <div id="LoggedDropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
                        <a class="dropdown-item" href="{{ route('myDashboard') }}">
                           La mia Dashboard
-                       </a>
-                       <a class="dropdown-item" href="{{ route('logout') }}">
-                          Account
-                       </a>
-                       <a class="dropdown-item" href="{{ route('logout') }}">
-                          Invita i tuoi amici
-                       </a>
-                       <a class="dropdown-item" href="{{ route('logout') }}">
-                          Raccomanda host
-                       </a>
-                       <a class="dropdown-item" href="{{ route('logout') }}">
-                          La tua guida
-                       </a>
-                       <a class="dropdown-item" href="{{ route('logout') }}">
-                          Airbnb for Work
                        </a>
                        <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
@@ -94,20 +70,11 @@
                  </span>
                @else
                  <div class="h-100 link-container d-flex align-items-center mr-4">
-                   <a href="{{ route('login') }}">Login</a>
+                   <a href="{{ route('login') }}">Accedi</a>
                  </div>
                    @if (Route::has('register'))
                      <div class="h-100 link-container d-flex align-items-center mr-4">
                        <a href="{{ route('register') }}">Registrati</a>
-                     </div>
-                     <div class="h-100 link-container d-flex align-items-center mr-4">
-                       <a href="#">Offri una casa</a>
-                     </div>
-                     <div class="h-100 link-container d-flex align-items-center mr-4">
-                       <a href="#">Offri un'esperienza</a>
-                     </div>
-                     <div class="h-100 link-container d-flex align-items-center mr-4">
-                       <a href="#">Aiuto</a>
                      </div>
                    @endif
                @endauth
