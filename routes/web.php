@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('page.home-mockup');
-})->name('home');
+Route::get('/', 'AllController@showHome')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-//comment
+Route::get('/myDashboard', 'HomeController@mydashboard')->name('myDashboard');

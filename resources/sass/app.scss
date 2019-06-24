@@ -8,33 +8,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-#background-top {
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-image: url('https://a0.muscache.com/4ea/air/v2/pictures/9c53bf65-1ad1-4080-b31e-2e082de08404.jpg?t=r:w3100-h2074-sfit,e:fjpg-c80');
-}
-
-header{
-  height: 80px;
-  a{
-    color: white;
-  }
-
-  a:hover{
-    color: white;
-    text-decoration: none;
-  }
-
-  #header-logo{
-    width: 50px;
-  }
-
-  .link-container:hover{
-    border-bottom: 1px solid white;
-  }
-
-  #hamburger-menu-container{
-    background: white;
-  }
-}
+// Sections
+@import 'const';
+@import 'header';
+@import 'apartments/_card';
+@import 'dashboard';
+@import 'messages';
+@import 'payments';
+@import 'sponsorships';
+@import 'footer';
