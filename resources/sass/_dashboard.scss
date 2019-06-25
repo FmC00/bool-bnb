@@ -16,6 +16,8 @@
   .btn-option {
     background-color: white;
     color: #ee555d;
+    width: 100px;
+    margin-bottom: 10px;
 
     .fas::before {
       color: #ee555d;
@@ -100,29 +102,40 @@
   }
 
   .card-apartment {
-    border: 1px solid $bnb-rgba6 !important;
+    // border: 0.4px solid $bnb1 !important;
+    box-shadow: 0px 0px 28px #404040;
+    border-radius: 6px;
+    // border: 0.4px solid #829196;
   }
   .card-apartment:hover {
     background-color: $bnb-rgba4 !important;
     cursor: pointer;
+    transition: all .1s ease-in-out;
   }
 
 
-  .search-input {
-    width: 300px;
-    border-radius: 999px;
-    border: 1px solid $bnb-rgba6;
-    border-style: solid;
-    text-align: center;
-    padding: 5px;
-    margin-right: 20px;
-  }
 
   form.search-form {
+
+    .search-input {
+      width: 350px;
+      border-radius: 999px;
+      border: 1px solid #f1f3f5;
+      // border: 1px solid $bnb-rgba6;
+      border-style: solid;
+      text-align: center;
+      padding: 5px;
+      margin-right: 20px;
+      background-color: #f1f3f5;
+      box-shadow: 0px 0px 10px $bnb-rgba8;
+      font-size: 18px;
+    }
 
     input:focus {
       border: 2px solid #ee555d;
       outline: none;
+      transition: all .1s ease-in-out;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.0125), 0 0 8px rgba(255, 89, 95, 0.4);
     }
 
     form {
@@ -137,9 +150,18 @@
       background: transparent;
       border: none;
     }
+
+    button:focus {
+      outline: none;
+    }
+
+    button i.fas {
+      // color: #495057;
+      color: $bnb1;
+    }
   }
 
-  #all-apartments {
+  #hr-all-apartments {
     margin-top: 2px;
   }
 }

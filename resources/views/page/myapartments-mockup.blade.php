@@ -20,11 +20,11 @@
     </div>
 
 
-    <hr id="all-apartments" class="w-100 ml-0">
+    <hr id="hr-all-apartments" class="w-100 ml-0">
      <div id="apartments-container" class="w-100 d-flex flex-wrap">
 
         @foreach (Auth::user()->apartments as $apartment)
-          <div class="m-2 card-apartment rounded">
+          <div class="m-2 card-apartment">
             <apartment-card
              title = '{{ $apartment->name }}'
              image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
