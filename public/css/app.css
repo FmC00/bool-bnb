@@ -10900,3 +10900,35 @@ main.py-4 {
   cursor: pointer;
 }
 
+#dashboard-right .search-input {
+  width: 300px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 89, 95, 0.6);
+  border-style: solid;
+  text-align: center;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+#dashboard-right form.search-form input:focus {
+  border: 2px solid #ee555d;
+  outline: none;
+}
+
+#dashboard-right form.search-form form {
+  margin: 0;
+  position: relative;
+}
+
+#dashboard-right form.search-form button {
+  position: absolute;
+  right: 70px;
+  top: 35px;
+  background: transparent;
+  border: none;
+}
+
+#dashboard-right #all-apartments {
+  margin-top: 2px;
+}
+

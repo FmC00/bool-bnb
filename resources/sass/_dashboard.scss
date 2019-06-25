@@ -106,4 +106,40 @@
     background-color: $bnb-rgba4 !important;
     cursor: pointer;
   }
+
+
+  .search-input {
+    width: 300px;
+    border-radius: 999px;
+    border: 1px solid $bnb-rgba6;
+    border-style: solid;
+    text-align: center;
+    padding: 5px;
+    margin-right: 20px;
+  }
+
+  form.search-form {
+
+    input:focus {
+      border: 2px solid #ee555d;
+      outline: none;
+    }
+
+    form {
+      margin: 0;
+      position: relative;
+    }
+
+    button {
+      position: absolute;
+      right: 70px;
+      top: 35px;
+      background: transparent;
+      border: none;
+    }
+  }
+
+  #all-apartments {
+    margin-top: 2px;
+  }
 }
