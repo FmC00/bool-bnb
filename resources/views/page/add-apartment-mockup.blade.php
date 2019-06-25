@@ -9,7 +9,7 @@
        </span>
        Inserisci nuovo appartamento
      </h4>
-    <hr class="w-100 ml-0 border">
+    <hr class="w-100 ml-0">
 
     <div class="container">
       @if ($errors->any())
@@ -32,6 +32,8 @@
       <form action="{{ route('storeApartment') }}" method="post">
 
         @csrf
+        <button class="btn btn-bnb mr-2"><a href="{{ route('myDashboard') }}"><i class="fas fa-arrow-alt-circle-left mr-2"></i>Indietro</a></button>
+        <button class="btn btn-bnb"><i class="fas fa-save"></i><input class="btn-form ml-2" type="submit" value="Salva annuncio"></button>
 
         <div class="row">
             <div class="form-group mt-5 col-12">
@@ -113,7 +115,6 @@
           @endforeach
         </div>
 
-        <input class="btn btn-light btn-lg" type="submit" value="save new apartment">
 
       </form>
     </div>

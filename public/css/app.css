@@ -10860,6 +10860,28 @@ main.py-4 {
   border: 1px solid #ee555d;
 }
 
+#dashboard-right button input.btn-form {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 0;
+}
+
+#dashboard-right button input.btn-form:hover {
+  background: #fff;
+  color: #FF595F;
+}
+
+#dashboard-right .btn:hover {
+  color: #FF595F;
+  background: #fff;
+  border: 1px solid #ee555d;
+}
+
+#dashboard-right .btn:hover a {
+  color: #FF595F;
+}
+
 #dashboard-right .dashboard-title button {
   background-color: #ee555d;
   color: white;

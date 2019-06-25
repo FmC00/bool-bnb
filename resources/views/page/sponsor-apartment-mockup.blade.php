@@ -7,10 +7,15 @@
          </path>
          </svg>
      </span>
-     <button class="btn btn-bnb mr-4"><a href="{{ route('myDashboard') }}"><i class="fas fa-arrow-alt-circle-left"></i>Indietro</a></button>
         Sponsorizza l'appartamento
      </h4>
-    <hr class="w-100 ml-0 border">
+     <hr class="w-100 ml-0">
+
+     <div class="container">
+       <button class="btn btn-bnb mr-4"><a href="{{ route('myDashboard') }}"><i class="fas fa-arrow-alt-circle-left mr-2"></i>Indietro</a></button>
+
+     </div>
+
 
   </div>
 @endsection

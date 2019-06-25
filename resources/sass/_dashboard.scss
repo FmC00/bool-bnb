@@ -52,12 +52,39 @@
     font-weight: 700;
     font-size: 30px;
   }
+
   input {
     color: #ee555d;
   }
 
   hr {
     border: 1px solid #ee555d;
+  }
+
+  button {
+
+    input.btn-form {
+      background: transparent;
+      color: $col-w;
+      border: none;
+      padding: 0;
+    }
+
+    input.btn-form:hover {
+      background: $col-w;
+      color: $bnb1;
+    }
+  }
+
+  .btn:hover {
+    color: $bnb1;
+    background: $col-w;
+    border: 1px solid #ee555d;
+
+    a {
+      color: $bnb1;
+    }
+
   }
 
   .dashboard-title {
