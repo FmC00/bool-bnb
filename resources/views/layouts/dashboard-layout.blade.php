@@ -39,8 +39,8 @@
            </div>
            <hr class="w-75 mx-auto">
            <div class="w-100">
-             <button class="btn w-75 mt-5"><a href="{{ route('addApartment') }}"><i class="fas fa-plus-circle"></i>Aggiungi appartamento</a></button>
-             <button class="btn w-75 mt-5"><a href="{{ route('messagesApartment') }}"><i class="fas fa-envelope"></i>I miei messaggi</a></button>
+             <button class="btn btn-left w-75 mt-5"><a href="{{ route('addApartment') }}"><i class="fas fa-plus-circle"></i>Aggiungi appartamento</a></button>
+             <button class="btn btn-left w-75 mt-5"><a href="{{ route('messagesApartment') }}"><i class="fas fa-envelope"></i>I miei messaggi</a></button>
            </div>
          </div>
          <div id="dashboard-right" class="col-9 bg-light d-flex flex-column justify-content-start vh-100">

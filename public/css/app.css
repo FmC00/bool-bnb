@@ -10814,6 +10814,26 @@ main.py-4 {
   margin-right: 10px;
 }
 
+#dashboard-left .btn-option:hover {
+  color: #fff;
+  background: #FF595F;
+}
+
+#dashboard-left .btn-option:hover a,
+#dashboard-left .btn-option:hover i::before {
+  color: #fff;
+}
+
+#dashboard-left .btn-left:hover {
+  color: #FF595F;
+  background: #fff;
+}
+
+#dashboard-left .btn-left:hover a,
+#dashboard-left .btn-left:hover .fas {
+  color: #FF595F;
+}
+
 #dashboard-left .btn-option {
   background-color: white;
   color: #ee555d;
