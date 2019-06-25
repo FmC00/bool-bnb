@@ -18,14 +18,14 @@
      <div class="container-fluid">
        <div id="row-dashboard" class="row p-5 bg-secondary">
          <div id="dashboard-left" class="vh-100 text-center">
-           <div class="w-100 mx-auto p-4 mt-2">
-             <button class="btn btn-option" type="button" name="button"><a href="{{ route('myDashboard') }}"><i class="fas fa-home"></i>Home</a></button>
-             <button class="btn btn-option" type="button" name="button"><a href="{{ route('home') }}"><i class="fas fa-exchange-alt"></i>Esci</a></button>
-             <button class="btn btn-option" type="button" name="button">
+           <div class="d-flex flex-column p-4 mt-2">
+             {{-- <button class="btn btn-option w-50 mx-auto" type="button" name="button"><a href="{{ route('myDashboard') }}"><i class="fas fa-home"></i>HOME</a></button> --}}
+             <button class="btn btn-option w-50 mx-auto" type="button" name="button"><a href="{{ route('home') }}"><i class="fas fa-exchange-alt"></i>EXIT</a></button>
+             <button class="btn btn-option w-50 mx-auto" type="button" name="button">
                <i class="fas fa-sign-out-alt"></i><a href="{{ route('logout') }}"
                  onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
-                  {{ __('Logout') }}
+                  {{ __('LOGOUT') }}
                </a>
                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf

@@ -5,8 +5,8 @@
   max-width: 20%;
 
   button {
-    background-color: #ee555d;
-    color: white;
+    background-color: $bnb1;
+    color: $col-w;
 
     i::before {
       margin-right: 10px;
@@ -25,42 +25,53 @@
   .btn-left:hover {
     color: $bnb1;
     background: $col-w;
-    // border: 1px solid #ee555d;
+    // border: 1px solid $bnb1;
 
     a, .fas {
       color: $bnb1;
     }
   }
 
-
-
   .btn-option {
-    background-color: white;
-    color: #ee555d;
-    width: 100px;
-    margin-bottom: 10px;
+    background-color: $col-w;
+    color: $bnb1;
+    margin-bottom: 15px;
 
     .fas::before {
-      color: #ee555d;
+      color: $bnb1;
       // padding-right: 5px;
     }
     a {
-      color: #ee555d;
+      color: $bnb1;
     }
 
   }
 
   hr {
-    border: 1px solid #ee555d;
+    border: 1px solid $bnb1;
   }
 
   .user-img {
     margin-top: 20px;
     margin: auto;
-    border: 1px solid #ee555d;
     height: 70px;
     width: 70px;
+    box-shadow: 0px 0px 5px $bnb-rgba8;
     border-radius: 40px;
+    // border: 1px solid #f1f3f5;
+    border: 1px solid $bnb1;
+  }
+
+  .user-img:hover {
+    border: 2px solid $bnb1;
+    transition: all .1s ease-in-out;
+  }
+
+  .user-img:focus {
+    border: 2px solid $bnb1;
+    outline: none;
+    transition: all .1s ease-in-out;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.0125), 0 0 8px rgba(255, 89, 95, 0.4);
   }
 }
 
@@ -78,11 +89,11 @@
   }
 
   input {
-    color: #ee555d;
+    color: $bnb1;
   }
 
   hr {
-    border: 1px solid #ee555d;
+    border: 1px solid $bnb1;
   }
 
   button {
@@ -103,7 +114,7 @@
   .btn:hover {
     color: $bnb1;
     background: $col-w;
-    border: 1px solid #ee555d;
+    border: 1px solid $bnb1;
 
     a {
       color: $bnb1;
@@ -113,7 +124,7 @@
   .dashboard-title {
 
     button {
-      background-color: #ee555d;
+      background-color: $bnb1;
       color: white;
 
       i::before {
@@ -141,22 +152,28 @@
     .search-input {
       width: 350px;
       border-radius: 999px;
-      border: 1px solid #f1f3f5;
-      // border: 1px solid $bnb-rgba6;
-      border-style: solid;
       text-align: center;
       padding: 5px;
       margin-right: 20px;
       background-color: #f1f3f5;
-      box-shadow: 0px 0px 10px $bnb-rgba8;
+      border: 1px solid #f1f3f5;
+      box-shadow: 0px 0px 5px $bnb-rgba8;
       font-size: 18px;
+      // border: 1px solid $bnb-rgba6;
     }
 
     input:focus {
-      border: 2px solid #ee555d;
+      border: 1px solid $bnb1;
       outline: none;
       transition: all .1s ease-in-out;
       box-shadow: inset 0 1px 1px rgba(0,0,0,0.0125), 0 0 8px rgba(255, 89, 95, 0.4);
+    }
+    input:hover {
+      // background: #495057;
+      background: $bnb-rgba;
+      border: 2px solid $bnb1;
+      transition: all .1s ease-in-out;
+      // box-shadow: 0px 0px 5px $bnb-rgba8;
     }
 
     form {
@@ -166,8 +183,8 @@
 
     button {
       position: absolute;
-      right: 70px;
-      top: 35px;
+      right: 140px;
+      top: 37px;
       background: transparent;
       border: none;
     }
@@ -184,5 +201,30 @@
 
   #hr-all-apartments {
     margin-top: 2px;
+  }
+
+  .user-img-dashboard {
+    margin-bottom: 6px;
+    margin-right: 20px;
+    height: 42px;
+    width: 42px;
+    border-radius: 40px;
+    border: 1px solid #f1f3f5;
+    box-shadow: 0px 0px 5px $bnb-rgba8;
+    // box-shadow: inset 0 1px 1px rgba(0,0,0,0.0125), 0 0 8px rgba(255, 89, 95, 0.4);
+
+  }
+
+
+  .user-img-dashboard:hover {
+    border: 2px solid $bnb1;
+    transition: all .1s ease-in-out;
+  }
+
+  .user-img-dashboard:focus {
+    border: 2px solid $bnb1;
+    outline: none;
+    transition: all .1s ease-in-out;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.0125), 0 0 8px rgba(255, 89, 95, 0.4);
   }
 }

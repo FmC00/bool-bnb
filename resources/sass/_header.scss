@@ -1,9 +1,9 @@
 .navbar-light .navbar-nav .nav-link {
-  color: #fff;
+  color: $col-w;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #fff;
+  color: $col-w;
 }
 
 main.py-4 {
@@ -24,40 +24,43 @@ main.py-4 {
   }
 
   .link-container:hover {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid $col-w;
   }
 
 
 
-  #hamburger-menu-container{
+  #hamburger-menu-container {
 
-
-    a{
+    a {
       color: grey;
       font-size: 18px
     }
-    #hamburger-logo-header{
+
+    #hamburger-logo-header {
       height: 80px;
 
-      #logo-hamburger{
+      #logo-hamburger {
         width: 50px;
 
-        #logo-svg{
+        #logo-svg {
           fill: white;
         }
-        #logo-svg.fill-red{
+
+        #logo-svg.fill-red {
           fill: red;
         }
-
       }
-      #hamb-arrow{
+
+      #hamb-arrow {
         color: white;
       }
-      #hamb-arrow.grey-arrow{
+
+      #hamb-arrow.grey-arrow {
         color: grey;
       }
     }
-    #hamburger-navbar{
+
+    #hamburger-navbar {
       display: none;
       background: white;
     }
@@ -72,7 +75,7 @@ main.py-4 {
   background-image: url('https://a0.muscache.com/4ea/air/v2/pictures/9c53bf65-1ad1-4080-b31e-2e082de08404.jpg?t=r:w3100-h2074-sfit,e:fjpg-c80');
 
     nav a {
-      color: #fff;
+      color: $col-w;
     }
     // nav a:hover {
     // border-bottom: 1px solid white;
@@ -130,7 +133,7 @@ main.py-4 {
 
 .user-img {
   margin-left: 15px;
-  border: 1px solid #fff;
+  border: 1px solid $col-w;
   height: 40px;
   width: 40px;
   border-radius: 40px;
