@@ -7,7 +7,10 @@
          </path>
          </svg>
        </span>
-       Inserisci nuovo appartamento
+       Inserisci nuovo appartamento:
+       <span id="title_app" > </span>
+       <span id="price_app"> </span>
+       <span id="price_app2"> </span>
      </h4>
     <hr class="w-100 ml-0">
 
@@ -37,9 +40,9 @@
 
         <div class="row">
             <div class="form-group mt-5 col-12">
-                <h2 class="">Titolo</h3>
+                <h2 id="title_app2" class="">Titolo</h3>
                 <label for="name">Nome appartamento</label>
-                <input type="text" name="name" class="form-control" placeholder="Inserisci il nome dell'appartamento">
+                <input id="input_title" type="text" name="name" class="form-control" placeholder="Inserisci il nome dell'appartamento">
             </div>
         </div>
 
@@ -63,7 +66,7 @@
         <div class="row">
             <div class="form-group col-lg-2 col-sm-12 mt-3">
                 <label for="price">Prezzo</label>
-                <input type="number" name="price" placeholder="es. 50.00" class="form-control">
+                <input id="input_price" type="number" name="price" placeholder="Es. 50.00" class="form-control">
             </div>
         </div>
 

@@ -37,7 +37,7 @@
               <button class="btn btn-bnb ml-2"><a href="{{ route('sponsorApartment') }}"><i class="fas fa-bullhorn"></i></a></button>
               <button class="btn btn-bnb ml-2"><a href="{{ route('statsApartment') }}"><i class="fas fa-chart-line"></i></a></button>
               <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-envelope"></i></a></button>
-              <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-trash-alt"></i></a></button>
+              <button class="btn btn-bnb ml-2"><a href="{{ route('destroyApartment') }}"><i class="fas fa-trash-alt"></i></a></button>
             </div>
           </div>
         @endforeach
