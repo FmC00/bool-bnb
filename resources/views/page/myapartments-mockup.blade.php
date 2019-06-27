@@ -15,7 +15,25 @@
         <div class="search-container mt-4">
           <input type="text" name="search-text" class="search-input" placeholder="Cerca uno o più appartamenti"/>
           <button class="submit"><i class="fas fa-search"></i></button>
-          <img src="" alt="" class="user-img-dashboard">
+
+          <span class="nav-item dropdown">
+              <a id="UserDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <img src="" alt="" class="user-img-dashboard">
+              </a>
+
+              <div id="LoggedDropdown" class="text-center dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
+                <a class="dropdown-item" href="{{ route('home') }}">Home</a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                   {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                   @csrf
+                </form>
+              </div>
+
+
         </div>
       </form>
     </div>
@@ -32,12 +50,18 @@
              location = 'Roma, Italia' class="m-0">
             </apartment-card>
 
-            <div class="d-flex justify-content-center mb-3">
+            <div class="d-flex justify-content-center mb-3" style="height:28px;">
               <button class="btn btn-bnb ml-2"><a href="{{ route('detailApartment') }}"><i class="fas fa-info-circle"></i></a></button>
               <button class="btn btn-bnb ml-2"><a href="{{ route('sponsorApartment') }}"><i class="fas fa-bullhorn"></i></a></button>
               <button class="btn btn-bnb ml-2"><a href="{{ route('statsApartment') }}"><i class="fas fa-chart-line"></i></a></button>
               <button class="btn btn-bnb ml-2"><a href="#"><i class="fas fa-envelope"></i></a></button>
-              <button class="btn btn-bnb ml-2"><a href="{{ route('destroyApartment') }}"><i class="fas fa-trash-alt"></i></a></button>
+
+              <form class="" action="{{ route('destroyApartment', $apartment->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-bnb ml-2"><input class="d-none" type="submit" name="" value=""><i class="fas fa-trash-alt"></i></button>
+              </form>
+
             </div>
           </div>
         @endforeach

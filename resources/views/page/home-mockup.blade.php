@@ -55,9 +55,9 @@
                      </a>
 
                      <div id="LoggedDropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
-                       {{-- <a class="dropdown-item" href="{{ route('myDashboard') }}">
+                       <a class="dropdown-item" href="{{ route('myDashboard') }}">
                           La mia Dashboard
-                       </a> --}}
+                       </a>
                        <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
