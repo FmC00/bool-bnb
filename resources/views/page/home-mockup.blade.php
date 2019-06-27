@@ -55,9 +55,6 @@
                      </a>
 
                      <div id="LoggedDropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
-                       <a class="dropdown-item" href="{{ route('myDashboard') }}">
-                          La mia Dashboard
-                       </a>
                        <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
@@ -91,7 +88,6 @@
                 </svg>
              </div>
              <i id="hamb-arrow" class="d-inline d-md-none fas fa-angle-down"></i>
-
            </div>
            {{-- inizio navbar con links dell'hamburger menu --}}
            <div id="hamburger-navbar"  class="vh-100 vw-100">
@@ -125,37 +121,48 @@
                        @endif
                    @endauth
                  @endif
-
                </div>
              </nav>
            </div>
          </div>
+         {{-- fine hamburger-menu --}}
+       </div>
+       <div class="row h-100">
+         <div class="col-12 d-flex position-relative">
+           <div id="searchbar" class="w-50">
+             <form class="d-flex flex-column align-items-center" action="{{route('search')}}" method="get">
+               <input class="w-75 text-secondary p-1 pl-4" type="text" name="location" placeholder="Cerca alloggi nella città che preferisci" value="">
+               <button class="btn btn-bnb mt-3" type="submit" name="button">Cerca</button>
+             </form>
+           </div>
+         </div>
        </div>
      </div>
-
      <div id="home-section-middle" class="container-fluid">
-       <div class="col-12 mb-5">
-         <h1 class="d-flex justify-content-center justify-content-md-start pt-5">Alloggi in tutto il mondo</h1>
+       <div class="row">
+         <div class="col-12 mb-5">
+           <h1 class="d-flex justify-content-center justify-content-md-start pt-5">Alloggi in tutto il mondo</h1>
+         </div>
+         <div id="apartments-container" class="col-12 d-flex flex-wrap justify-content-center justify-content-md-start">
+           {{-- card appartamento singolo (Vue component)--}}
+           @foreach ($apartments as $apartment)
+             <apartment-card
+             title = {{ $apartment -> name }}
+             image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
+             location = 'Roma, Italia'>
+           </apartment-card>
+           @endforeach
+           {{-- fine card appartamento singolo --}}
+         </div>
+
        </div>
-       <div id="apartments-container" class="col-12 d-flex flex-wrap justify-content-center justify-content-md-start">
-         {{-- card appartamento singolo (Vue component)--}}
-         @foreach ($apartments as $apartment)
-           <apartment-card
-           title = {{ $apartment -> name }}
-           image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
-           location = 'Roma, Italia'>
-         </apartment-card>
-         @endforeach
-         {{-- fine card appartamento singolo --}}
-       </div>
+     </div>
+     <div class="container-fluid">
        <footer class="row">
-         <div class="col-12">
+        <div id="footer" class="col-12">
+          <h1>My Footer</h1>
+        </div>
        </footer>
      </div>
-     <footer class="row">
-      <div id="footer" class="col-12">
-        <h1>My Footer</h1>
-      </div>
-     </footer>
     </body>
  </html>

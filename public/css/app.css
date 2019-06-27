@@ -10789,6 +10789,33 @@ main.py-4 {
   border-radius: 40px;
 }
 
+#searchbar {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#searchbar input {
+  border-style: solid;
+  border-radius: 999px;
+  box-shadow: 0px 0px 28px #404040;
+  outline: none;
+}
+
+#searchbar button {
+  border-radius: 999px;
+}
+
+#searchbar button:hover {
+  color: white;
+  opacity: 0.7;
+}
+
+#header-background-full {
+  background-color: #FF595F;
+}
+
 .apartment-card {
   width: 260px;
   height: 280px;

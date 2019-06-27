@@ -24,3 +24,4 @@ Route::get('/sponsorApartment', 'HomeController@sponsorApartment')->name('sponso
 Route::get('/statsApartment', 'HomeController@statsApartment')->name('statsApartment');
 Route::get('/messagesApartment', 'HomeController@messagesApartment')->name('messagesApartment');
 Route::get('/detailApartment', 'HomeController@detailApartment')->name('detailApartment');
+Route::get('/searchApartment','Allcontroller@search')->name('search');
