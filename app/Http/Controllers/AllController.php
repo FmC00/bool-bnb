@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Apartment;
+use App\Service;
 
 class AllController extends Controller
 {
@@ -16,18 +17,7 @@ class AllController extends Controller
     }
     function search(Request $request){
       $location = $request -> location;
-
-      // capire come convertire la stringa in lat e long
-
-      // $query = Apartment::query();
-      // if($latitude){
-      //   $query = $query -> where('latitude', 'LIKE', '%' . $latitude . '%');
-      // }
-      // if($longitude){
-      //   $query = $query -> where('longitude', 'LIKE', '%' . $longitude . '%');
-      // }
-
-
-      return view('page.search-page', compact('$location'));
+      $services = Service::all();
+      return view('page.search-page', compact('location','services'));
     }
 }

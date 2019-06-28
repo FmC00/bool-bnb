@@ -38,14 +38,14 @@
                          Diventa un host <span class="caret"></span>
                      </a>
                      <div id="LoggedDropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="BecomeHostDropdown">
-                       <a class="dropdown-item" href="">
+                       <a class="dropdown-item" href="{{ route('addApartment') }}">
                           Pubblica il tuo annuncio
                        </a>
                      </div>
-                     <a class="mr-4" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                     <a class="mr-4" href="{{ route('messagesApartment') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                          Messaggi <span class="caret"></span>
                      </a>
-                     <a class="mr-4" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                     <a class="mr-4" href="{{ route('myDashboard') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                          Appartamenti <span class="caret"></span>
                      </a>
                  </span>
@@ -55,10 +55,15 @@
                      </a>
 
                      <div id="LoggedDropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
+
+                       {{-- <a class="dropdown-item" href="{{ route('myDashboard') }}">
+                          La mia Dashboard
+                       </a> --}}
+
                        <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
-                          {{ __('Esci') }}
+                          {{ __('Logout') }}
                        </a>
                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                           @csrf

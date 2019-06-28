@@ -105,16 +105,21 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <h3>Servizi</h3>
-          @foreach($services as $service)
-            <div>
-              <input id="{{ $service->name }}" type="checkbox" name="service[]" value="{{ $service->id }}">
-              <label for="{{ $service->name }}">{{ $service->name }}</label>
+        <div class="row mt-5 mb-5">
+          <div class="col-12">
+              <h3>Servizi</h3>
+          </div>
+          <div class="col-12">
+            <div class="row">
+              @foreach($services as $service)
+                <div class="form-group col-2">
+                  <input id="{{ $service->name }}" type="checkbox" name="service[]" value="{{ $service->id }}">
+                  <label for="{{ $service->name }}">{{ $service->name }}</label>
+                </div>
+              @endforeach
             </div>
-          @endforeach
+          </div>
         </div>
-
 
       </form>
     </div>

@@ -49026,28 +49026,28 @@ function hamburgerMenu() {
 }
 
 ; // funzione di ricerca degli appartamenti
-// function search() {
-//
-//   var me = $("#search_input");
-//   var content = me.val().toLowerCase();
-//
-//   var list = $("#apartments-container");
-//
-//   list.removeClass("d-none");
-//
-//   for (var i = 0; i < list.length; i++) {
-//
-//     var apartment = list.eq(i);
-//     console.log(apartment);
-//     var name = apartment.find("h4");
-//     var listContent = name.text().toLowerCase();
-//
-//     if (!listContent.includes(content)) {
-//
-//       apartment.addClass("d-none");
-//     }
-//   }
-// }
+
+function search() {
+  console.log("Hello World"); // var me = $("#search_input");
+  // var content = me.val().toLowerCase();
+  //
+  // var list = $("#apartments-container");
+  //
+  // list.removeClass("d-none");
+  //
+  // for (var i = 0; i < list.length; i++) {
+  //
+  //   var apartment = list.eq(i);
+  //   console.log(apartment);
+  //   var name = apartment.find("h4");
+  //   var listContent = name.text().toLowerCase();
+  //
+  //   if (!listContent.includes(content)) {
+  //
+  //     apartment.addClass("d-none");
+  //   }
+  // }
+}
 
 function init() {
   hamburgerMenu();
@@ -49061,8 +49061,9 @@ function init() {
   });
   new Vue({
     el: "#apartments-container"
-  }); // var input = $("#search_input");
-  // input.keyup(search);
+  });
+  var input = $("#search_input");
+  input.keyup(search);
 }
 
 $(document).ready(init); // 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg

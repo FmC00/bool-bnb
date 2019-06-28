@@ -15,13 +15,14 @@
         <div class="search-container mt-4">
           <input type="text" name="search-text" class="search-input" placeholder="Cerca uno o più appartamenti"/>
           <button class="submit"><i class="fas fa-search"></i></button>
+          <img src="" alt="" class="user-img-dashboard">
         </div>
       </form>
     </div>
 
 
     <hr id="hr-all-apartments" class="w-100 ml-0">
-     <div id="apartments-container" class="w-100 d-flex flex-wrap">
+     <div id="apartments-container" class="w-100 d-flex flex-wrap ml-4">
 
         @foreach (Auth::user()->apartments as $apartment)
           <div class="m-2 card-apartment">
