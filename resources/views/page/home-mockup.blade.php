@@ -134,7 +134,14 @@
          <div class="col-12 d-flex position-relative">
            <div id="searchbar" class="w-50">
              <form class="d-flex flex-column align-items-center" action="{{route('search')}}" method="get">
-               <input class="w-75 text-secondary p-1 pl-4" type="text" name="location" placeholder="Cerca alloggi nella città che preferisci" value="">
+               <input id="geoInput" class="w-75 text-secondary p-1 pl-4" type="text" name="location" placeholder="Cerca alloggi nella città che preferisci" value="">
+               <div id="suggest-box" class="w-100">
+                 <div class="suggest-list d-flex flex-column align-items-center w-75 text-secondary bg-white mx-auto">
+
+                 </div>
+               </div>
+               <input id="lat" type="hidden" name="lat" value="">
+               <input id="lon" type="hidden" name="lon" value="">
                <button class="btn btn-bnb mt-3" type="submit" name="button">Cerca</button>
              </form>
            </div>

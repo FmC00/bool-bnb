@@ -51,6 +51,7 @@ function search() {
   }
 }
 
+<<<<<<< HEAD
 // funzione addInput
 function addTitle() {
   $("#input_title").keyup(function() {
@@ -87,6 +88,80 @@ function init() {
 
   addTitle();
   // addPrice();
+=======
+function geoSearch() {
+
+  var queue = $('#geoInput').val();
+
+  if(queue.length > 0) {
+
+    $.ajax({
+      url: 'https://api.tomtom.com/search/2/geocode/' + queue + '.json',
+
+      method: 'GET',
+
+      data: {
+        key: 'OYwFfJFH4jBA3AMNykhlTAixWHywtdIR'
+      },
+
+      success: function(inData) {
+
+        $('.suggest-list').empty();
+
+        var results = inData.results;
+
+        for (var i = 0; i < results.length; i++) {
+
+          var result = results[i];
+          var address = result['address'];
+
+          var str = "";
+
+          if (address['streetName']) {
+            var streetName = address['streetName'];
+            str += streetName + ", ";
+          }
+          if (address['municipality']) {
+            var municipality = address['municipality'];
+            str += municipality + ", ";
+          }
+          if (address['countrySubdivision']) {
+            var countrySubdivision = address['countrySubdivision'];
+            str += countrySubdivision + ", ";
+          }
+          if (address['country']) {
+            var country = address['country'];
+            str += country + " ";
+          }
+
+          var txt = '<div class="suggest w-100 p-2" data-lon="' + result['position']['lon'] + '" data-lat="' + result['position']['lat'] + '">' + str + '</div>';
+          $('.suggest-list').append(txt);
+        }
+      }
+    });
+  }
+}
+
+function lonlatForm() {
+
+  var me = $(this);
+  var lon = me.data('lon');
+  var lat = me.data('lat');
+
+  $('#geoInput').val(me.text())
+  $('#lon').val(lon);
+  $('#lat').val(lat);
+
+  $('.suggest-list').empty();
+}
+
+function init(){
+
+  hamburgerMenu();
+
+  $('#geoInput').on('keyup', geoSearch);
+  $(document).on('click', '.suggest', lonlatForm)
+>>>>>>> tomtom
 
   Vue.component('apartment-card',{
     template:'#apartment-card',
@@ -101,8 +176,13 @@ function init() {
     el:"#apartments-container"
   });
 
+<<<<<<< HEAD
   // var input = $("#search_input");
   // input.keyup(search);
+=======
+  var input = $("#search_input");
+  input.on('keyup', search);
+>>>>>>> tomtom
 }
 
 $(document).ready(init);

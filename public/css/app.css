@@ -10816,6 +10816,15 @@ main.py-4 {
   opacity: 0.7;
 }
 
+#suggest-box {
+  position: absolute;
+  top: 35px;
+}
+
+#suggest-box > div {
+  border-radius: 5px;
+}
+
 #header-background-full {
   background-color: #FF595F;
 }

@@ -159,6 +159,14 @@ main.py-4 {
   }
 }
 
+#suggest-box{
+  position:absolute;
+  top:35px;
+  &>div {
+    border-radius: 5px;
+  }
+}
+
 // questo è il background dell'header contenuto nell'home-layout che si vede nella search-page con background senza immagine ma con solo il colore
 
 #header-background-full{
