@@ -14,10 +14,10 @@ class AllController extends Controller
 
       return view('page.home-mockup', compact('apartments'));
     }
-    function search(Request $request){
-      $location = $request -> location;
 
-      // capire come convertire la stringa in lat e long
+    function search(Request $request) {
+
+      $location = $request -> location;
 
       // $query = Apartment::query();
       // if($latitude){

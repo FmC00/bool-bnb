@@ -54,38 +54,74 @@ function geoSearch() {
 
   var queue = $('#geoInput').val();
 
-  $.ajax({
-    url: 'https://api.tomtom.com/search/2/geocode/' + queue + '.json',
+  if(queue.length > 0) {
 
-    method: 'GET',
+    $.ajax({
+      url: 'https://api.tomtom.com/search/2/geocode/' + queue + '.json',
 
-    data: {
-      key: 'OYwFfJFH4jBA3AMNykhlTAixWHywtdIR'
-    },
+      method: 'GET',
 
-    success: function(inData) {
+      data: {
+        key: 'OYwFfJFH4jBA3AMNykhlTAixWHywtdIR'
+      },
 
-      var results = inData.results;
+      success: function(inData) {
 
-      for (var i = 0; i < results.length; i++) {
+        $('.suggest-list').empty();
 
-        var result = results[i];
+        var results = inData.results;
 
-        console.log(result);
-        var txt = '<p>' + result['address'] + '</p>';
-        $('.suggest-list').append(txt);
+        for (var i = 0; i < results.length; i++) {
+
+          var result = results[i];
+          var address = result['address'];
+
+          var str = "";
+
+          if (address['streetName']) {
+            var streetName = address['streetName'];
+            str += streetName + ", ";
+          }
+          if (address['municipality']) {
+            var municipality = address['municipality'];
+            str += municipality + ", ";
+          }
+          if (address['countrySubdivision']) {
+            var countrySubdivision = address['countrySubdivision'];
+            str += countrySubdivision + ", ";
+          }
+          if (address['country']) {
+            var country = address['country'];
+            str += country + " ";
+          }
+
+          var txt = '<div class="suggest w-100 p-2" data-lon="' + result['position']['lon'] + '" data-lat="' + result['position']['lat'] + '">' + str + '</div>';
+          $('.suggest-list').append(txt);
+        }
       }
-    }
-  });
+    });
+  }
 }
 
-// https://<baseURL>/search/<versionNumber>/geocode/<query>.<ext>?key=<Your_API_Key>[&storeResult=<storeResult>][&typeahead=<typeahead>][&limit=<limit>][&ofs=<ofs>][&lat=<lat>][&lon=<lon>][&countrySet=<countrySet>][&radius=<radius>][&topLeft=<topLeft>][&btmRight=<btmRight>][&language=<language>][&extendedPostalCodesFor=<extendedPostalCodesFor>][&view=<view>]
+function lonlatForm() {
+
+  var me = $(this);
+  var lon = me.data('lon');
+  var lat = me.data('lat');
+
+  $('#geoInput').val(me.text())
+  $('#lon').val(lon);
+  $('#lat').val(lat);
+
+  $('.suggest-list').empty();
+}
 
 function init(){
 
   hamburgerMenu();
 
   $('#geoInput').on('keyup', geoSearch);
+  $(document).on('click', '.suggest', lonlatForm)
 
   Vue.component('apartment-card',{
     template:'#apartment-card',
@@ -101,7 +137,7 @@ function init(){
   });
 
   var input = $("#search_input");
-  input.keyup(search);
+  input.on('keyup', search);
 }
 
 $(document).ready(init);
