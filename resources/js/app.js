@@ -26,32 +26,6 @@ function hamburgerMenu(){
   });
 };
 
-// funzione di ricerca degli appartamenti
-function search() {
-  console.log("Hello World");
-
-  var me = $("#search_input");
-  var content = me.val().toLowerCase();
-
-  var list = $("#apartments-container");
-
-  list.removeClass("d-none");
-
-  for (var i = 0; i < list.length; i++) {
-
-    var apartment = list.eq(i);
-    console.log(apartment);
-    var name = apartment.find("h4");
-    var listContent = name.text().toLowerCase();
-
-    if (!listContent.includes(content)) {
-
-      apartment.addClass("d-none");
-    }
-  }
-}
-
-<<<<<<< HEAD
 // funzione addInput
 function addTitle() {
   $("#input_title").keyup(function() {
@@ -82,13 +56,31 @@ function addTitle() {
 // }
 
 
-function init() {
+// funzione di ricerca degli appartamenti
+function search() {
+  console.log("Hello World");
 
-  hamburgerMenu();
+  var me = $("#search_input");
+  var content = me.val().toLowerCase();
 
-  addTitle();
-  // addPrice();
-=======
+  var list = $("#apartments-container");
+
+  list.removeClass("d-none");
+
+  for (var i = 0; i < list.length; i++) {
+
+    var apartment = list.eq(i);
+    console.log(apartment);
+    var name = apartment.find("h4");
+    var listContent = name.text().toLowerCase();
+
+    if (!listContent.includes(content)) {
+
+      apartment.addClass("d-none");
+    }
+  }
+}
+
 function geoSearch() {
 
   var queue = $('#geoInput').val();
@@ -159,9 +151,12 @@ function init(){
 
   hamburgerMenu();
 
+  addTitle();
+  // addPrice();
+
   $('#geoInput').on('keyup', geoSearch);
   $(document).on('click', '.suggest', lonlatForm)
->>>>>>> tomtom
+
 
   Vue.component('apartment-card',{
     template:'#apartment-card',
@@ -176,13 +171,8 @@ function init(){
     el:"#apartments-container"
   });
 
-<<<<<<< HEAD
-  // var input = $("#search_input");
-  // input.keyup(search);
-=======
   var input = $("#search_input");
   input.on('keyup', search);
->>>>>>> tomtom
 }
 
 $(document).ready(init);

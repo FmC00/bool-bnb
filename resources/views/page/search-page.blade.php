@@ -2,13 +2,8 @@
 @section('content')
   <div id="search-page-container" class="container-fluid">
     <div class="row">
-<<<<<<< HEAD
       <div class="col-12 d-flex  justify-content-center pt-3 pl-4">
         <h1 class="mb-4 text-center">Appartamenti a {{$location}}</h1>
-=======
-      <div class="col-12">
-        <h1>Appartamenti a {{ $location }}</h1>
->>>>>>> tomtom
       </div>
       <div id="filter-apartments-container" class="col-12 d-flex justify-content-center">
         <div id="filter-apartments-box" class="w-75 rounded mb-4 bg-white">
