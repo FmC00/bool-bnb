@@ -50,9 +50,42 @@ function search() {
   // }
 }
 
+function geoSearch() {
+
+  var queue = $('#geoInput').val();
+
+  $.ajax({
+    url: 'https://api.tomtom.com/search/2/geocode/' + queue + '.json',
+
+    method: 'GET',
+
+    data: {
+      key: 'OYwFfJFH4jBA3AMNykhlTAixWHywtdIR'
+    },
+
+    success: function(inData) {
+
+      var results = inData.results;
+
+      for (var i = 0; i < results.length; i++) {
+
+        var result = results[i];
+
+        console.log(result);
+        var txt = '<p>' + result['address'] + '</p>';
+        $('.suggest-list').append(txt);
+      }
+    }
+  });
+}
+
+// https://<baseURL>/search/<versionNumber>/geocode/<query>.<ext>?key=<Your_API_Key>[&storeResult=<storeResult>][&typeahead=<typeahead>][&limit=<limit>][&ofs=<ofs>][&lat=<lat>][&lon=<lon>][&countrySet=<countrySet>][&radius=<radius>][&topLeft=<topLeft>][&btmRight=<btmRight>][&language=<language>][&extendedPostalCodesFor=<extendedPostalCodesFor>][&view=<view>]
+
 function init(){
 
   hamburgerMenu();
+
+  $('#geoInput').on('keyup', geoSearch);
 
   Vue.component('apartment-card',{
     template:'#apartment-card',

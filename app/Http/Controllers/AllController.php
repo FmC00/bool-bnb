@@ -28,6 +28,6 @@ class AllController extends Controller
       // }
 
 
-      return view('page.search-page', compact('$location'));
+      return view('page.search-page', compact('location'));
     }
 }
