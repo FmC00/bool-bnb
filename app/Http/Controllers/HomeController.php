@@ -90,7 +90,7 @@ class HomeController extends Controller
 
     public function messagesApartment()
     {
-      return view('page.messages-apartment-mockup');
+      return view('page.sms');
     }
 
     public function edit($id)
@@ -129,6 +129,6 @@ class HomeController extends Controller
       $apartments = Apartment::findOrFail($id);
       $apartments->services()->detach();
       $apartments->delete();
-      return redirect('/');
+      return redirect('/myDashboard');
     }
 }

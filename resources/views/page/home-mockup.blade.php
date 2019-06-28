@@ -43,10 +43,10 @@
                        </a>
                      </div>
                      <a class="mr-4" href="{{ route('messagesApartment') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                         Messaggi <span class="caret"></span>
+                         I miei messaggi <span class="caret"></span>
                      </a>
                      <a class="mr-4" href="{{ route('myDashboard') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                         Appartamenti <span class="caret"></span>
+                         I miei appartamenti <span class="caret"></span>
                      </a>
                  </span>
                  <span class="nav-item dropdown">
@@ -55,11 +55,9 @@
                      </a>
 
                      <div id="LoggedDropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
-
-                       {{-- <a class="dropdown-item" href="{{ route('myDashboard') }}">
+                       <a class="dropdown-item" href="{{ route('myDashboard') }}">
                           La mia Dashboard
-                       </a> --}}
-
+                       </a>
                        <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
