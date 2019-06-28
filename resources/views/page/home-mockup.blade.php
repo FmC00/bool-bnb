@@ -43,10 +43,10 @@
                        </a>
                      </div>
                      <a class="mr-4" href="{{ route('messagesApartment') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                         Messaggi <span class="caret"></span>
+                         I miei messaggi <span class="caret"></span>
                      </a>
                      <a class="mr-4" href="{{ route('myDashboard') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                         Appartamenti <span class="caret"></span>
+                         I miei appartamenti <span class="caret"></span>
                      </a>
                  </span>
                  <span class="nav-item dropdown">

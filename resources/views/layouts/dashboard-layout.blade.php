@@ -18,24 +18,11 @@
      <div class="container-fluid">
        <div id="row-dashboard" class="row p-5 bg-secondary">
          <div id="dashboard-left" class="vh-100 text-center">
-           {{-- Button dashboard-layout --}}
-           {{-- <div class="d-flex flex-column p-4 mt-2">
-             <button class="btn btn-option w-50 mx-auto" type="button" name="button"><a href="{{ route('myDashboard') }}"><i class="fas fa-home"></i>HOME</a></button>
-             <button class="btn btn-option w-50 mx-auto" type="button" name="button"><a href="{{ route('home') }}"><i class="fas fa-exchange-alt"></i>EXIT</a></button>
-             <button class="btn btn-option w-50 mx-auto" type="button" name="button">
-               <i class="fas fa-sign-out-alt"></i><a href="{{ route('logout') }}"
-                 onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();">
-                  {{ __('LOGOUT') }}
-               </a>
-               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-               </form>
-             </button>
-           </div> --}}
-           {{-- <hr class="w-75 mx-auto"> --}}
+
            <div class="mt-5">
-             <img src="" alt="" class="user-img">
+             <a href="{{route('myDashboard')}}">
+               <img src="" alt="" class="user-img">
+             </a>
              <h4 class="mt-5 text-white mb-5">Benvenuto {{ Auth::user()->name }}</h4>
            </div>
            <hr class="w-75 mx-auto">

@@ -16,24 +16,28 @@
           <input type="text" name="search-text" class="search-input" placeholder="Cerca uno o più appartamenti"/>
           <button class="submit"><i class="fas fa-search"></i></button>
 
-          <span class="nav-item dropdown">
-              <a id="UserDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                <img src="" alt="" class="user-img-dashboard">
-              </a>
+          <a id="UserDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <img src="" alt="" class="user-img-dashboard">
+          </a>
 
-              <div id="LoggedDropdown" class="text-center dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
-                <a class="dropdown-item" href="{{ route('home') }}">Home</a>
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                  onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                   {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                   @csrf
-                </form>
-              </div>
-
-
+          <div id="LoggedDropdown" class="text-right dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
+            <a class="dropdown-item" href="{{ route('home') }}">Aggiungi appartamento</a>
+            <hr>
+            <a class="dropdown-item" href="{{ route('home') }}">Bacheca messaggi</a>
+            <hr>
+            <a class="dropdown-item" href="{{ route('home') }}">I miei appartamenti</a>
+            <hr>
+            <a class="dropdown-item" href="{{ route('home') }}">Ritorna alla Home</a>
+            {{-- <hr> --}}
+            <a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+               {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+               @csrf
+            </form>
+          </div>
         </div>
       </form>
     </div>
