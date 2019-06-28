@@ -10659,6 +10659,10 @@ a:hover {
   color: white;
 }
 
+.btn:hover {
+  color: white;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: #fff;
 }
@@ -10814,6 +10818,10 @@ main.py-4 {
 
 #header-background-full {
   background-color: #FF595F;
+}
+
+#filter-apartments-box {
+  border: 1px solid lightgrey;
 }
 
 .apartment-card {
