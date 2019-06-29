@@ -26,7 +26,10 @@ Route::delete('/destroyApartment/{id}', 'HomeController@destroy')->name('destroy
 Route::get('/sponsorApartment', 'HomeController@sponsorApartment')->name('sponsorApartment');
 Route::get('/statsApartment', 'HomeController@statsApartment')->name('statsApartment');
 Route::get('/messagesApartment', 'HomeController@messagesApartment')->name('messagesApartment');
-Route::get('/detailApartment', 'HomeController@detailApartment')->name('detailApartment');
+
+Route::post('/message/new', 'AllController@storeMessage')->name('storeMessage');
 
 Route::get('/searchApartment','AllController@search')->name('search');
-Route::post('/message/new', 'AllController@storeMessage')->name('storeMessage');
+Route::get('/detailApartment', 'HomeController@detailApartment')->name('detailApartment');
+
+Route::get('/detailsApartment', 'HomeController@detailsApartment')->name('detailsApartment');
