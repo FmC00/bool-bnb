@@ -8,7 +8,7 @@
         <img class="rounded" src="https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg" style="height: 300px;">
 
         <div class="container d-flex align-items-center justify-content-end">
-          <h1 class="">{ $apartment->title }</h1>
+          <h1 class="">{{ $apartment->name }}</h1>
         </div>
 
       </div>
@@ -40,7 +40,7 @@
                   <div class="col-12">
                     <div class="">
                       <h3>Descrizione</h3>
-                      <p>{ $apartment->description }</p>
+                      <p>{{ $apartment->description }}</p>
                     </div>
                     <div class="">
                     </div>
@@ -67,19 +67,23 @@
                   <div class="col-12">
 
                       <div class="">
-                        <h2>{ $apartment->price }€ a pers.</h2>
+                        <h2>{{ $apartment->price }}€ a pers.</h2>
                       </div>
 
                       <div class="apartment__main__specific">
                         <h3>Caratteristiche</h3>
                         <ul>
-                          <li>Camere: { $apartment->rooms }</li>
-                          <li>Letti: { $apartment->beds }</li>
-                          <li>Bagni: { $apartment->bathrooms }</li>
-                          <li>Dimensioni: { $apartment->square_meters } mq</li>
+                          <li>Camere: {{ $apartment->rooms_number }}</li>
+                          <li>Ospiti: {{ $apartment->guests_number }}</li>
+                          <li>Bagni: {{ $apartment->bathrooms }}</li>
+                          <li>Dimensioni: {{ $apartment->area_sm }} mq</li>
                         </ul>
                         <h3>Servizi</h3>
-                        <li>Servizi: { $apartment->services }</li>
+                        <ul>
+                          @foreach ($apartment->services as $service)
+                            <li>{{ $service->name }}</li>
+                          @endforeach
+                        </ul>
                       </div>
 
                   </div>
@@ -102,7 +106,7 @@
                 </div>
             </div>
             <div class="">
-                <form class="form-group needs-validation" action="{ route('apartment.message.store') }" method="post" novalidate>
+                <form class="form-group needs-validation" action="{{ route('storeMessage') }}" method="post" novalidate>
                     @csrf
                     <div class="form-group">
                         <label for="name">Nome</label>
@@ -117,9 +121,9 @@
                     <div class="form-group">
                         <label for="email">Email</label>
                         @if(isset(Auth::user()->id))
-                            <input type="email" name="email" class="form-control" placeholder="Inserisci la email" value="{ Auth::user()->email }" required>
+                            <input type="email" name="mail" class="form-control" placeholder="Inserisci la email" value="{{ Auth::user()->email }}" required>
                         @else
-                            <input type="email" name="email" class="form-control" placeholder="Inserisci la email" required>
+                            <input type="email" name="mail" class="form-control" placeholder="Inserisci la email" required>
                         @endif
                         <div class="valid-feedback">
                             Campo valido
@@ -130,7 +134,7 @@
                     </div>
                     <div class="form-group">
                         <label for="text">Testo</label>
-                        <textarea class="form-control" name="text" rows="3" placeholder="Inserisci il testo" required></textarea>
+                        <textarea class="form-control" name="content" rows="3" placeholder="Inserisci il testo" required></textarea>
                         <div class="valid-feedback">
                             Campo valido
                         </div>
@@ -138,8 +142,8 @@
                             Inserisci un messaggio
                         </div>
                     </div>
-                    <input type="hidden" name="user_id" value="{ $apartment->user_id }">
-                    <input type="hidden" name="apartment_id" value="{ $apartment->id }">
+                    <input type="hidden" name="user_id" value="{{ $apartment->user_id }}">
+                    <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
                     <div class="form-group">
                         <input type="submit" value="Invia" class="form-control">
                     </div>

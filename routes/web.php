@@ -32,4 +32,4 @@ Route::post('/message/new', 'AllController@storeMessage')->name('storeMessage');
 Route::get('/searchApartment','AllController@search')->name('search');
 Route::get('/detailApartment', 'HomeController@detailApartment')->name('detailApartment');
 
-Route::get('/detailsApartment', 'HomeController@detailsApartment')->name('detailsApartment');
+Route::get('/detailsApartment/{id}', 'AllController@detailsApartment')->name('detailsApartment');

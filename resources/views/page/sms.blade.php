@@ -1,10 +1,5 @@
-{{-- @extends('layouts.dashboard-layout2')
-@section('title', 'Messaggi dell\'appartamento:')
-@section('right-options')
-  <h4>RIGHT</h4>
-@stop --}}
-
 @extends('layouts.dashboard-layout')
+@section('title', 'Messaggi')
 
 @section('content')
   <div class="col-10 offset-1 my-5">

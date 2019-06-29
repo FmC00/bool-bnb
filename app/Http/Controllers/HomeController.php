@@ -49,11 +49,6 @@ class HomeController extends Controller
       return view('page.detail-apartment-mockup');
     }
 
-    public function detailsApartment()
-    {
-      return view('page.details-apartment-page');
-    }
-
     public function store(Request $request)
     {
 

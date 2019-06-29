@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Apartment;
 use App\Service;
+use App\Message;
 
 class AllController extends Controller
 {
@@ -35,16 +36,24 @@ class AllController extends Controller
         'mail' => 'required',
         'name'=> 'required',
         'content' => 'required',
+        'user_id' => 'required',
         'apartment_id' => 'required'
 
       ]);
 
       $message = Message::make($validateData);
-      $message->user_id = Apartment::findOrFail($validateData['apartment_id'])->user;
+      $apartment = Apartment::findOrFail($validateData['apartment_id']);
+      $message->content .= ' (messaggio per appartamento: ' . $apartment->name . ')';
 
       $message->save();
 
       return redirect('/');
+    }
+
+    public function detailsApartment($id)
+    {
+      $apartment = Apartment::findOrFail($id);
+      return view('page.details-apartment-page', compact('apartment'));
     }
 
 }

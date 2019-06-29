@@ -47,7 +47,7 @@
       <div id="apartments-container" class="col-12 d-flex flex-wrap justify-content-center">
         {{-- card appartamento singolo (Vue component)--}}
         @for ($i=0; $i < 10; $i++)
-          <a href="{{ route('detailsApartment') }}" style="color:black;">
+          <a href="{{ route('detailsApartment', 5) }}" style="color:black;">
             <apartment-card
               title = ciao
               image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
