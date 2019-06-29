@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
 use App\Apartment;
 use App\Service;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -90,7 +92,10 @@ class HomeController extends Controller
 
     public function messagesApartment()
     {
-      return view('page.sms');
+      $user_id = Auth::user()->id;
+      $messages = User::findOrFail($user_id)->messages;
+
+      return view('page.sms', compact('messages'));
     }
 
     public function edit($id)

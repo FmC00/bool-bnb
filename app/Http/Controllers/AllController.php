@@ -15,9 +15,36 @@ class AllController extends Controller
 
       return view('page.home-mockup', compact('apartments'));
     }
+
     function search(Request $request){
       $location = $request -> location;
+      $lat = $request -> lat;
+      $lon = $request -> lon;
+
+      // $apartments = QUERY
+
       $services = Service::all();
-      return view('page.search-page', compact('location','services'));
+      return view('page.search-page', compact('location','services', 'apartments'));
     }
+
+    public function storeMessage(Request $request)
+    {
+
+      $validateData = $request->validate([
+
+        'mail' => 'required',
+        'name'=> 'required',
+        'content' => 'required',
+        'apartment_id' => 'required'
+
+      ]);
+
+      $message = Message::make($validateData);
+      $message->user_id = Apartment::findOrFail($validateData['apartment_id'])->user;
+
+      $message->save();
+
+      return redirect('/');
+    }
+
 }
