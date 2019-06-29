@@ -14,18 +14,17 @@
      <title>Case vacanze, alloggi, esperienze e luoghi - Airbnb</title>
    </head>
    <body>
-     <div id="header-background-full" class="container-fluid">
-
+     <div class="container-fluid vh-100 back-top">
        @include('sections.header-homepage')
-
+       @include('sections.searchbar-homepage')
      </div>
-      @yield('content');
+     @include('sections.content-homepage')
      <div class="container-fluid">
-       {{-- <footer class="row">
+       <footer class="row">
         <div id="footer" class="col-12">
           <h1>My Footer</h1>
         </div>
-       </footer> --}}
+       </footer>
      </div>
     </body>
-  </html>
+ </html>

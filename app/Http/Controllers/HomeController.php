@@ -47,6 +47,11 @@ class HomeController extends Controller
       return view('page.detail-apartment-mockup');
     }
 
+    public function detailsApartment()
+    {
+      return view('page.details-apartment-page');
+    }
+
     public function store(Request $request)
     {
 
@@ -90,7 +95,7 @@ class HomeController extends Controller
 
     public function messagesApartment()
     {
-      return view('page.sms');
+      return view('page.messages-apartment-mockup');
     }
 
     public function edit($id)

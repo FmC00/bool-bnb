@@ -10818,11 +10818,20 @@ main.py-4 {
 
 #suggest-box {
   position: absolute;
-  top: 35px;
+  top: 142px;
 }
 
 #suggest-box > div {
-  border-radius: 5px;
+  border-radius: 4px !important;
+}
+
+#geoInput {
+  transition: box-shadow 200ms ease-in !important;
+  border: 1px solid #EBEBEB !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  height: 48px !important;
+  font-size: 16px;
 }
 
 #header-background-full {
@@ -10976,7 +10985,6 @@ main.py-4 {
 
 #dashboard-right .card-apartment:hover {
   background-color: rgba(255, 89, 95, 0.4) !important;
-  cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
 

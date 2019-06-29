@@ -161,10 +161,19 @@ main.py-4 {
 
 #suggest-box{
   position:absolute;
-  top:35px;
+  top: 142px;
   &>div {
-    border-radius: 5px;
+    border-radius: 4px !important;
   }
+}
+
+#geoInput {
+  transition: box-shadow 200ms ease-in !important;
+  border: 1px solid #EBEBEB !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  height: 48px !important;
+  font-size: 16px;
 }
 
 // questo è il background dell'header contenuto nell'home-layout che si vede nella search-page con background senza immagine ma con solo il colore
