@@ -61,16 +61,14 @@ class HomeController extends Controller
         'guests_number'=> 'required',
         'bathrooms'=> 'required',
         'area_sm'=> 'required',
-        'address_lat' => '',
-        'address_lon'=> '',
+        'address_lat' => 'required',
+        'address_lon'=> 'required',
         'image' => '',
         'service' => ''
       ]);
 
       $apartment = Apartment::make($validateData);
       $apartment->user_id = Auth::user()->id;
-      $apartment->address_lat = 35;
-      $apartment->address_lon = 35;
       $apartment->image = "image";
 
       $apartment ->save();

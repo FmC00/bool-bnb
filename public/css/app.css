@@ -10817,6 +10817,7 @@ main.py-4 {
 }
 
 #suggest-box {
+  z-index: 100;
   position: absolute;
   top: 142px;
 }
