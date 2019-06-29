@@ -13,7 +13,7 @@ class AllController extends Controller
 
       $apartments = Apartment::all();
 
-      return view('page.home-mockup', compact('apartments'));
+      return view('page.homepage', compact('apartments'));
     }
     function search(Request $request){
       $location = $request -> location;

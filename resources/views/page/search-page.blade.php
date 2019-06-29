@@ -47,11 +47,13 @@
       <div id="apartments-container" class="col-12 d-flex flex-wrap justify-content-center">
         {{-- card appartamento singolo (Vue component)--}}
         @for ($i=0; $i < 10; $i++)
-          <apartment-card
-          title = ciao
-          image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
-          location = 'Roma, Italia'>
-        </apartment-card>
+          <a href="{{ route('detailsApartment') }}" style="color:black;">
+            <apartment-card
+              title = ciao
+              image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
+              location = 'Roma, Italia'>
+            </apartment-card>
+          </a>
         @endfor
         {{-- fine card appartamento singolo --}}
       </div>
