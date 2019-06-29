@@ -11,7 +11,7 @@
 
      @foreach (Auth::user()->apartments as $apartment)
        <div class="m-2 card-apartment">
-         <a href="{{ route('detailsApartment') }}" style="color:black;">
+         <a href="{{ route('detailApartment',$apartment->id) }}" style="color:black;">
            <apartment-card
             title = '{{ $apartment->name }}'
             image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
@@ -19,7 +19,10 @@
            </apartment-card>
          </a>
          <div class="d-flex justify-content-center mb-3" style="height:28px;">
-           <button class="btn btn-bnb ml-2"><a href="{{ route('detailsApartment') }}"><i class="fas fa-info-circle"></i></a></button>
+           <form class="" action="{{route('detailsApartment')}}" method="get">
+             <input type="hidden" name="apartmentid" value="{{ $apartment->id}}">
+             <button type="submit" class="btn btn-bnb ml-2"><i class="fas fa-info-circle"></i></button>
+           </form>
            <button class="btn btn-bnb ml-2"><a href="{{ route('sponsorApartment') }}"><i class="fas fa-bullhorn"></i></a></button>
            {{-- <button class="btn btn-bnb ml-2"><a href="{{ route('statsApartment',$apartment->id)}}"><i class="fas fa-chart-line"></i></a></button> --}}
            <form class="" action="{{route('statsApartment')}}" method="get">

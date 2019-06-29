@@ -4,7 +4,11 @@
   {{-- right-options --}}
 @stop
 @section('content')
+<div class="w-100 d-flex">
+  <h1>{{$apartment->name}}</h1>
+  <div>ciao</div>
 
+</div>
 
 
 @stop

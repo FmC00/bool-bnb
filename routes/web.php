@@ -25,6 +25,6 @@ Route::get('/sponsorApartment', 'HomeController@sponsorApartment')->name('sponso
 Route::get('/statsApartment', 'HomeController@statsApartment')->name('statsApartment');
 Route::get('/messagesApartment', 'HomeController@messagesApartment')->name('messagesApartment');
 Route::get('/searchApartment','AllController@search')->name('search');
-Route::get('/detailApartment', 'HomeController@detailApartment')->name('detailApartment');
+Route::get('/detailApartment/{id}', 'HomeController@detailApartment')->name('detailApartment');
 
 Route::get('/detailsApartment', 'HomeController@detailsApartment')->name('detailsApartment');

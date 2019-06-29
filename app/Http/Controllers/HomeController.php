@@ -42,14 +42,18 @@ class HomeController extends Controller
       return view('page.add-apartment-mockup', compact('services'));
     }
 
-    public function detailApartment()
+    public function detailApartment($id)
     {
-      return view('page.detail-apartment-mockup');
+      $apartment = Apartment::findOrFail($id);
+      return view('page.details-apartment-page', compact('apartment'));
     }
 
-    public function detailsApartment()
+    public function detailsApartment(Request $request)
     {
-      return view('page.details-apartment-page');
+      $id = $request->get('apartmentid');
+
+      $apartment = Apartment::findOrFail($id);
+      return view('page.details-apartment-page',compact('apartment'));
     }
 
     public function store(Request $request)

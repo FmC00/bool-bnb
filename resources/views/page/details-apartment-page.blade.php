@@ -8,7 +8,7 @@
         <img class="rounded" src="https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg" style="height: 300px;">
 
         <div class="container d-flex align-items-center justify-content-end">
-          <h1 class="">{ $apartment->title }</h1>
+          <h1 class="">{{ $apartment->name }}</h1>
         </div>
 
       </div>
@@ -40,12 +40,12 @@
                   <div class="col-12">
                     <div class="">
                       <h3>Descrizione</h3>
-                      <p>{ $apartment->description }</p>
+                      <p>{{$apartment->description }}</p>
                     </div>
                     <div class="">
                     </div>
                     <h3>Indirizzo</h3>
-                    <p>{ $apartment->street } { $apartment->house_number }, { $apartment->locality }, { $apartment->postal_code }, { $apartment->state }</p>
+                    <p>{{ $apartment->street }} { $apartment->house_number }, { $apartment->locality }, { $apartment->postal_code }, { $apartment->state }</p>
                   </div>
 
 
@@ -67,7 +67,7 @@
                   <div class="col-12">
 
                       <div class="">
-                        <h2>{ $apartment->price }€ a pers.</h2>
+                        <h2>{{ $apartment->price }}€ a pers.</h2>
                       </div>
 
                       <div class="apartment__main__specific">
