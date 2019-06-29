@@ -25,5 +25,7 @@
         "vue-template-compiler": "^2.6.10",
         "webpack-cli": "^3.3.4"
     },
-    "dependencies": {}
+    "dependencies": {
+        "braintree-web": "^2.32.1"
+    }
 }

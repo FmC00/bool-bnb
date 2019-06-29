@@ -123,6 +123,10 @@ class HomeController extends Controller
       ]);
 
       $apartments = Apartment::find(intval($id));
+
+      $visitCount = $request->visitCount;
+      $apartment->visit_count = $visitCount;
+
       $apartments->update($validateData);
       $services = Service::find($validateData['service']);
       $apartments->services()->sync($services);

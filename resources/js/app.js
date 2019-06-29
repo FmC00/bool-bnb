@@ -149,6 +149,24 @@ function lonlatForm() {
 
 function init(){
 
+  //Braintree Payment
+  braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
+  container: 'dropin-container'
+  });
+  // Options
+  var braintree = require('braintree-web');
+  braintree.setup('CLIENT-TOKEN-FROM-SERVER', 'INTEGRATION-TYPE', options);
+  // Paypal
+  braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
+  container: 'dropin-container',
+  paypal: {
+    singleUse: true,
+    amount: 10.00,
+    currency: 'EUR'
+  }
+});
+
+
   hamburgerMenu();
 
   addTitle();

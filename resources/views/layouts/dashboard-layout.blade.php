@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <!-- JS: MY SCRIPT -->
     <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
+    <script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
     <!-- IMG: ICON -->
     <link rel="shortcut icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
     <title>My Dashboard</title>
@@ -95,7 +96,7 @@
           </div>
 
           @yield('content')
-
+          @yield('scripts')
         </div>
       </div>
     </div>

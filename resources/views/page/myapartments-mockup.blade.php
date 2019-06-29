@@ -11,6 +11,7 @@
 
      @foreach (Auth::user()->apartments as $apartment)
        <div class="m-2 card-apartment">
+         <p>Visit Count: {{ $apartment->visit_count }}</p>
          <a href="{{ route('detailsApartment') }}" style="color:black;">
            <apartment-card
             title = '{{ $apartment->name }}'

@@ -1,6 +1,32 @@
 @extends('layouts.home-layout')
 @section('content')
 
+    {{-- <form id="apartmentVisitCount" action="{{ route('updateApartment', $apartment->id) }}" method="post">
+      @csrf
+      <input type="text" name="visitCount" value="{{ $apartment->visit_count }}">
+    </form>
+
+    <script type="text/javascript">
+
+      setTimeout(function() {
+
+        let visitCount = document.getElementById('apartmentVisitCount').value;
+        let visitCountPlusOne = parseInt(visitCount) + 1;
+
+        document.getElementById('apartmentVisitCount').value = visitCountPlusOne;
+
+        let $formVar = $('form');
+
+        $.ajax({
+          url: $formVar.prop('{{ route('updateApartment', $apartment->id) }}'),
+          method: 'PUT',
+          data: $formVar.serialize()
+        });
+      }, 1000);
+    </script> --}}
+
+
+
     <div class="container-fluid">
 
       <div class="container p-3 d-flex justify-content-between">
