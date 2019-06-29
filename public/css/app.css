@@ -10967,7 +10967,6 @@ main.py-4 {
 
 #dashboard-right .card-apartment:hover {
   background-color: rgba(255, 89, 95, 0.4) !important;
-  cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
 

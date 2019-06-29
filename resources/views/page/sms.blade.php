@@ -1,9 +1,10 @@
-@extends('layouts.dashboard-layout2')
+@extends('layouts.dashboard-layout')
 @section('title', 'Messaggi dell\'appartamento:')
 @section('right-options')
-  <h4>RIGHT</h4>
+  {{-- right-options --}}
 @stop
 @section('content')
 
-  <h4>CONTENT</h4>
+  {{-- content --}}
+
 @stop
