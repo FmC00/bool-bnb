@@ -88,9 +88,13 @@ class HomeController extends Controller
       return view('page.sponsor-apartment-mockup');
     }
 
-    public function statsApartment()
+    public function statsApartment(Request $request)
     {
-      return view('page.stats-apartment-mockup');
+      $id = $request->get('apartmentid');
+
+      $apartment = Apartment::findOrFail($id);
+
+      return view('page.stats-apartment-mockup', compact('apartment'));
     }
 
     public function messagesApartment()

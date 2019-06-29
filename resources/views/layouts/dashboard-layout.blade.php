@@ -16,9 +16,8 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div id="row-dashboard" class="row p-5 bg-secondary">
-        <div id="dashboard-left" class="vh-100 text-center">
-
+      <div id="row-dashboard" class="row p-md-5 p-1 bg-secondary">
+        <div id="dashboard-left" class="col-12 col-md-3 vh-50 vh-md-100 text-center">
           {{-- Button dashboard-layout --}}
            <div class="d-flex flex-column p-4 mt-2">
              {{-- <button class="btn btn-option w-50 mx-auto" type="button" name="button"><a href="{{ route('myDashboard') }}"><i class="fas fa-home"></i>HOME</a></button>
@@ -44,12 +43,11 @@
           </div>
           <hr class="w-75 mx-auto">
           <div class="w-100">
-            <button class="btn btn-left w-75 mt-5"><a href="{{ route('addApartment') }}"><i class="fas fa-plus-circle"></i>Aggiungi appartamento</a></button>
-            <button class="btn btn-left w-75 mt-5"><a href="{{ route('messagesApartment') }}"><i class="fas fa-envelope"></i>I miei messaggi</a></button>
+            <button class="btn btn-left w-75 mt-2 mt-md-5"><a href="{{ route('addApartment') }}"><i class="fas fa-plus-circle"></i>Aggiungi appartamento</a></button>
+            <button class="btn btn-left w-75 mt-2 mb-5 mt-md-5"><a href="{{ route('messagesApartment') }}"><i class="fas fa-envelope"></i>I miei messaggi</a></button>
           </div>
         </div>
-        <div id="dashboard-right" class="col-9 bg-light d-flex flex-column justify-content-start vh-100">
-
+        <div id="dashboard-right" class="col-12 col-md-9 bg-light d-flex flex-column justify-content-start vh-100">
           <div class="mr-4 ml-5">
             <div class="d-flex justify-content-between">
               <h4 class="mt-4">
@@ -90,7 +88,6 @@
                 </div>
               </form>
             </div>
-
             <hr id="hr-all-apartments" class="w-100 ml-0">
           </div>
 
