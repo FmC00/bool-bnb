@@ -37,9 +37,12 @@
                   Benvenuto {{ Auth::user()->name }}<span class="caret"><img src="" alt="" class="user-img"></span>
               </a>
 
-              <div id="LoggedDropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
+              <div id="LoggedDropdown" class="text-right dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
                 <a class="dropdown-item" href="{{ route('myDashboard') }}">
                    La mia Dashboard
+                </a>
+                <a class="dropdown-item" href="{{ route('home') }}">
+                   Homepage
                 </a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                   onclick="event.preventDefault();

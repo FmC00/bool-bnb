@@ -95,7 +95,7 @@ class HomeController extends Controller
 
     public function messagesApartment()
     {
-      return view('page.sms');
+      return view('page.messages-apartment-mockup');
     }
 
     public function edit($id)
