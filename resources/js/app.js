@@ -1,6 +1,9 @@
 require('./bootstrap');
+var Chart = require('chart.js')
+// var myChart = new Chart(ctx, {...});
 
 window.Vue = require('vue');
+
 
 // Hamburger menu
 function hamburgerMenu(){
@@ -11,6 +14,7 @@ function hamburgerMenu(){
   var searchPage = $("#search-page-container");
   var footer =$('#footer')
   var svg = $("#logo-svg");
+  var searchbar = $("#searchbar");
   target.click(function(){
     target.toggleClass("bg-white");
     arrow.toggleClass("fa-angle-down");
@@ -21,6 +25,7 @@ function hamburgerMenu(){
     section.fadeToggle();
     searchPage.fadeToggle();
     footer.fadeToggle();
+    searchbar.fadeToggle();
     // riempimento dell'svg del logo con il colore
     svg.toggleClass("fill-red");
   });

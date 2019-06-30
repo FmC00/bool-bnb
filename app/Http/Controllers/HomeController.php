@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
 use App\Apartment;
 use App\Service;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -42,14 +44,18 @@ class HomeController extends Controller
       return view('page.add-apartment-mockup', compact('services'));
     }
 
-    public function detailApartment()
+    public function detailApartment($id)
     {
-      return view('page.detail-apartment-mockup');
+      $apartment = Apartment::findOrFail($id);
+      return view('page.detail-apartment-mockup', compact('apartment'));
     }
 
-    public function detailsApartment()
+    public function detailsApartment(Request $request)
     {
-      return view('page.details-apartment-page');
+      $id = $request->get('apartmentid');
+
+      $apartment = Apartment::findOrFail($id);
+      return view('page.details-apartment-page',compact('apartment'));
     }
 
     public function store(Request $request)
@@ -64,16 +70,14 @@ class HomeController extends Controller
         'guests_number'=> 'required',
         'bathrooms'=> 'required',
         'area_sm'=> 'required',
-        'address_lat' => '',
-        'address_lon'=> '',
+        'address_lat' => 'required',
+        'address_lon'=> 'required',
         'image' => '',
         'service' => ''
       ]);
 
       $apartment = Apartment::make($validateData);
       $apartment->user_id = Auth::user()->id;
-      $apartment->address_lat = 35;
-      $apartment->address_lon = 35;
       $apartment->image = "image";
 
       $apartment ->save();
@@ -88,14 +92,21 @@ class HomeController extends Controller
       return view('page.sponsor-apartment-mockup');
     }
 
-    public function statsApartment()
+    public function statsApartment(Request $request)
     {
-      return view('page.stats-apartment-mockup');
+      $id = $request->get('apartmentid');
+
+      $apartment = Apartment::findOrFail($id);
+
+      return view('page.stats-apartment-mockup', compact('apartment'));
     }
 
     public function messagesApartment()
     {
-      return view('page.messages-apartment-mockup');
+      $user_id = Auth::user()->id;
+      $messages = User::findOrFail($user_id)->messages;
+
+      return view('page.sms', compact('messages'));
     }
 
     public function edit($id)
