@@ -82,7 +82,7 @@
   <div class="form-group col-12">
     <label for="geoInput">Indirizzo</label><br>
     <input id="geoInput" class="form-control" type="text" name="" placeholder="Inserisci l'indirizzo" value="">
-    <div id="suggest-box" class="w-100">
+    <div class="w-100">
       <div class="suggest-list d-flex flex-column align-items-center w-100 text-secondary bg-white mx-auto">
       </div>
     </div>
