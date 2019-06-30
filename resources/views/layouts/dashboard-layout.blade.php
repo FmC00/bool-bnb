@@ -96,7 +96,7 @@
           </div>
 
           @yield('content')
-          
+
         </div>
       </div>
     </div>

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
 use App\Apartment;
 use App\Service;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -64,16 +66,14 @@ class HomeController extends Controller
         'guests_number'=> 'required',
         'bathrooms'=> 'required',
         'area_sm'=> 'required',
-        'address_lat' => '',
-        'address_lon'=> '',
+        'address_lat' => 'required',
+        'address_lon'=> 'required',
         'image' => '',
         'service' => ''
       ]);
 
       $apartment = Apartment::make($validateData);
       $apartment->user_id = Auth::user()->id;
-      $apartment->address_lat = 35;
-      $apartment->address_lon = 35;
       $apartment->image = "image";
 
       $apartment ->save();
@@ -95,7 +95,10 @@ class HomeController extends Controller
 
     public function messagesApartment()
     {
-      return view('page.messages-apartment-mockup');
+      $user_id = Auth::user()->id;
+      $messages = User::findOrFail($user_id)->messages;
+
+      return view('page.sms', compact('messages'));
     }
 
     public function edit($id)
