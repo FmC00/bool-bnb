@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use App\Message;
 use App\Apartment;
-
 use Laravel\Cashier\Billable;
 
 class User extends Authenticatable

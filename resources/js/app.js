@@ -35,27 +35,6 @@ function addTitle() {
   });
 }
 
-// function addPrice() {
-//
-//   var price = $("#input_price").val();
-//   console.log(price);
-//   if (price === 0 || null) {
-//
-//     console.log("uguale a zero o null");
-//
-//     $("#price_app").html("");
-//   } else {
-//
-//     console.log("diverso da zero");
-//
-//     $("#input_price").keyup(function() {
-//       price = $(this).val();
-//       $("#price_app").html("€." + ' ' + price);
-//     });
-//   };
-// }
-
-
 // funzione di ricerca degli appartamenti
 function search() {
   console.log("Hello World");
@@ -147,30 +126,36 @@ function lonlatForm() {
   $('.suggest-list').empty();
 }
 
-function init(){
+//Braintree Payment
+function PaymentBraintree() {
 
-  //Braintree Payment
   braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
   container: 'dropin-container'
   });
-  // Options
-  var braintree = require('braintree-web');
-  braintree.setup('CLIENT-TOKEN-FROM-SERVER', 'INTEGRATION-TYPE', options);
-  // Paypal
-  braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
-  container: 'dropin-container',
-  paypal: {
-    singleUse: true,
-    amount: 10.00,
-    currency: 'EUR'
-  }
-});
+  // // Options
+  // var braintree = require('braintree-web');
+  // braintree.setup('CLIENT-TOKEN-FROM-SERVER', 'INTEGRATION-TYPE', options);
+  // // Paypal
+  //   braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
+  //   container: 'dropin-container',
+  //   paypal: {
+  //     singleUse: true,
+  //     amount: 10.00,
+  //     currency: 'EUR'
+  //   }
+  // });
+}
+
+
+
+function init(){
 
 
   hamburgerMenu();
 
   addTitle();
-  // addPrice();
+
+  PaymentBraintree()
 
   $('#geoInput').on('keyup', geoSearch);
   $(document).on('click', '.suggest', lonlatForm)
