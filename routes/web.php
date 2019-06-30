@@ -26,5 +26,8 @@ Route::get('/statsApartment', 'HomeController@statsApartment')->name('statsApart
 Route::get('/messagesApartment', 'HomeController@messagesApartment')->name('messagesApartment');
 Route::get('/searchApartment','AllController@search')->name('search');
 Route::get('/detailApartment/{id}', 'HomeController@detailApartment')->name('detailApartment');
-
 Route::get('/detailsApartment', 'HomeController@detailsApartment')->name('detailsApartment');
+// Route::post('fileUpload',[
+//   'as'=>'image.add',
+//   'uses'=>'HomeController@fileUpload'
+// ]);

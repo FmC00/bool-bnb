@@ -70,15 +70,19 @@ class HomeController extends Controller
         'area_sm'=> 'required',
         'address_lat' => '',
         'address_lon'=> '',
-        'image' => '',
         'service' => ''
       ]);
+
+      $image = $request->file('image');
+      $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+      $destinationPath = public_path('/images');
+      $image->move($destinationPath, $input['imagename']);
 
       $apartment = Apartment::make($validateData);
       $apartment->user_id = Auth::user()->id;
       $apartment->address_lat = 35;
       $apartment->address_lon = 35;
-      $apartment->image = "image";
+      $apartment->image = $input['imagename'];
 
       $apartment ->save();
 
@@ -144,4 +148,12 @@ class HomeController extends Controller
       $apartments->delete();
       return redirect('/myDashboard');
     }
+    // public function fileUpload(Request $request)
+    // {
+    //   $image = $request->file('image');
+    //   $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+    //   $destinationPath = public_path('/images');
+    //   $image->move($destinationPath, $input['imagename']);
+    //   return redirect('/addApartment');
+    // }
 }

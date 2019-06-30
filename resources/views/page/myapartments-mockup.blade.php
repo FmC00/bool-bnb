@@ -14,7 +14,7 @@
          <a href="{{ route('detailApartment',$apartment->id) }}" style="color:black;">
            <apartment-card
             title = '{{ $apartment->name }}'
-            image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
+            image = '../images/{{$apartment->image}}'
             location = 'Roma, Italia' class="m-0">
            </apartment-card>
          </a>
