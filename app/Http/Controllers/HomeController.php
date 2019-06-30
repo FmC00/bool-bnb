@@ -44,14 +44,18 @@ class HomeController extends Controller
       return view('page.add-apartment-mockup', compact('services'));
     }
 
-    public function detailApartment()
+    public function detailApartment($id)
     {
-      return view('page.detail-apartment-mockup');
+      $apartment = Apartment::findOrFail($id);
+      return view('page.detail-apartment-mockup', compact('apartment'));
     }
 
-    public function detailsApartment()
+    public function detailsApartment(Request $request)
     {
-      return view('page.details-apartment-page');
+      $id = $request->get('apartmentid');
+
+      $apartment = Apartment::findOrFail($id);
+      return view('page.details-apartment-page',compact('apartment'));
     }
 
     public function store(Request $request)
@@ -88,9 +92,13 @@ class HomeController extends Controller
       return view('page.sponsor-apartment-mockup');
     }
 
-    public function statsApartment()
+    public function statsApartment(Request $request)
     {
-      return view('page.stats-apartment-mockup');
+      $id = $request->get('apartmentid');
+
+      $apartment = Apartment::findOrFail($id);
+
+      return view('page.stats-apartment-mockup', compact('apartment'));
     }
 
     public function messagesApartment()

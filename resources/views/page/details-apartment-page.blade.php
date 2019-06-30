@@ -66,12 +66,16 @@
                   <div class="col-12">
                     <div class="">
                       <h3>Descrizione</h3>
+<<<<<<< HEAD
                       <p>{{ $apartment->description }}</p>
+=======
+                      <p>{{$apartment->description }}</p>
+>>>>>>> origin/michele
                     </div>
                     <div class="">
                     </div>
                     <h3>Indirizzo</h3>
-                    <p>{ $apartment->street } { $apartment->house_number }, { $apartment->locality }, { $apartment->postal_code }, { $apartment->state }</p>
+                    <p>{{ $apartment->street }} { $apartment->house_number }, { $apartment->locality }, { $apartment->postal_code }, { $apartment->state }</p>
                   </div>
 
 
