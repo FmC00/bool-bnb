@@ -47,7 +47,7 @@
                 <div class="alert-danger p-3 text-center rounded">
                   {{-- solo se l'utente è proprietario --}}
                   <a href="{ route('appartamento.modifica', $apartment->id) }" class="btn btn-bnb">Modifica</a>
-                  <a href="{ route('appartamento.sponsorizza', $apartment->id) }" class="btn btn-bnb">Sponsorizza</a>
+                  <a href="{{ route('plans.index') }}" class="btn btn-bnb">Sponsorizza</a>
                   {{-- anche se l'utente non è proprietario --}}
                   <a href="{ route('apaprtamento.statistiche', $apartment->id) }" class="btn btn-bnb">Visualizza statistiche</a>
                   <a href="{ route }" class="btn btn-bnb">Contatta il proprietario</a>

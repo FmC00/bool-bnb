@@ -1,6 +1,6 @@
 <script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
 <script>
-  jQuery.ajax({
+  $.ajax({
       url: "{{ route('token') }}",
   })
   .done(function(res) {

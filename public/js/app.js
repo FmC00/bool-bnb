@@ -49115,19 +49115,24 @@ function lonlatForm() {
 
 function PaymentBraintree() {
   braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
-    container: 'dropin-container'
-  }); // // Options
-  // var braintree = require('braintree-web');
-  // braintree.setup('CLIENT-TOKEN-FROM-SERVER', 'INTEGRATION-TYPE', options);
-  // // Paypal
-  //   braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
-  //   container: 'dropin-container',
-  //   paypal: {
-  //     singleUse: true,
-  //     amount: 10.00,
-  //     currency: 'EUR'
-  //   }
-  // });
+    container: 'dropin-container',
+    paypal: {
+      // singleUse: true,
+      // amount: 10.00,
+      // currency: 'EUR',
+      button: {
+        type: 'checkout'
+      }
+    },
+    onPaymentMethodReceived: function onPaymentMethodReceived(obj) {
+      // Do some logic in here.
+      // When you're ready to submit the form:
+      myForm.submit();
+    }
+  }); // Options
+  // https://developers.braintreepayments.com/guides/drop-in/setup-and-integration/javascript/v2
+  // Guida Laravel Cashier
+  // https://appdividend.com/2018/12/04/laravel-cashier-braintree-payment-gateway/
 }
 
 function init() {
