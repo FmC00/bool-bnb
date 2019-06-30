@@ -22,7 +22,7 @@
 
          <div class="d-flex justify-content-center mb-3" style="height:28px;">
            <button class="btn btn-bnb ml-2"><a href="{{ route('detailsApartment') }}"><i class="fas fa-info-circle"></i></a></button>
-           <button class="btn btn-bnb ml-2"><a href="{ route('plans.show') }"><i class="fas fa-bullhorn"></i></a></button>
+           <button class="btn btn-bnb ml-2"><a href="{{ route('plans.index') }}"><i class="fas fa-bullhorn"></i></a></button>
            <button class="btn btn-bnb ml-2"><a href="{{ route('statsApartment') }}"><i class="fas fa-chart-line"></i></a></button>
            <button class="btn btn-bnb ml-2"><a href="{{ route('messagesApartment') }}"><i class="fas fa-envelope"></i></a></button>
 

@@ -49138,7 +49138,6 @@ function PaymentBraintree() {
 function init() {
   hamburgerMenu();
   addTitle();
-  PaymentBraintree();
   $('#geoInput').on('keyup', geoSearch);
   $(document).on('click', '.suggest', lonlatForm);
   Vue.component('apartment-card', {
@@ -49152,8 +49151,8 @@ function init() {
   new Vue({
     el: "#apartments-container"
   });
-  var input = $("#search_input");
-  input.on('keyup', search);
+  PaymentBraintree(); // var input = $("#search_input");
+  // input.on('keyup', search);
 }
 
 $(document).ready(init); // 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg
