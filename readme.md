@@ -32,6 +32,13 @@ DB_USERNAME=your_user
 DB_PASSWORD=your_password
 ```
 
+```sh
+BRAINTREE_ENV=sandbox
+BRAINTREE_MERCHANT_ID=id
+BRAINTREE_PUBLIC_KEY=key
+BRAINTREE_PRIVATE_KEY=privatekey
+```
+
 Generate your key:
 
 ```sh
