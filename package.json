@@ -26,7 +26,9 @@
         "webpack-cli": "^3.3.4"
     },
     "dependencies": {
+        "braintree": "^2.18.0",
         "braintree-web": "^2.32.1",
-        "chart.js": "^2.8.0"
+        "chart.js": "^2.8.0",
+        "npm-check-updates": "^3.1.12"
     }
 }
