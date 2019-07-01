@@ -40,4 +40,10 @@ Route::post('/message/new', 'AllController@storeMessage')->name('storeMessage');
 Route::get('/searchApartment','AllController@search')->name('search');
 Route::get('/detailApartment/{id}', 'HomeController@detailApartment')->name('detailApartment');
 
+
 Route::get('/detailsApartment/{id}', 'AllController@detailsApartment')->name('detailsApartment');
+
+// Route::post('fileUpload',[
+//   'as'=>'image.add',
+//   'uses'=>'HomeController@fileUpload'
+// ]);

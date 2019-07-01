@@ -15,12 +15,11 @@
          <a href="{{ route('detailApartment', $apartment->id) }}" style="color:black;">
            <apartment-card
             title = '{{ $apartment->name }}'
-            image = 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg'
+            image = '../images/{{$apartment->image}}'
             location = 'Roma, Italia' class="m-0">
            </apartment-card>
          </a>
          <div class="d-flex justify-content-center mb-3" style="height:28px;">
-
            <button class="btn btn-bnb ml-2"><a href="{{route('detailApartment', $apartment->id)}}"><i class="fas fa-info-circle"></i></a></button>
            <button class="btn btn-bnb ml-2"><a href="{{ route('sponsorApartment') }}"><i class="fas fa-bullhorn"></i></a></button>
            {{-- <button class="btn btn-bnb ml-2"><a href="{{ route('statsApartment',$apartment->id)}}"><i class="fas fa-chart-line"></i></a></button> --}}

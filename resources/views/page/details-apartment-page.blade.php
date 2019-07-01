@@ -66,11 +66,7 @@
                   <div class="col-12">
                     <div class="">
                       <h3>Descrizione</h3>
-<<<<<<< HEAD
                       <p>{{ $apartment->description }}</p>
-=======
-                      <p>{{$apartment->description }}</p>
->>>>>>> origin/michele
                     </div>
                     <div class="">
                     </div>
