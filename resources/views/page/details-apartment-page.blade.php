@@ -1,8 +1,9 @@
 @extends('layouts.home-layout')
 @section('content')
 
-    {{-- <form id="apartmentVisitCount" action="{{ route('updateApartment', $apartment->id) }}" method="post">
+    <form id="apartmentVisitCount" action="{{ route('updateVisit', $apartment->id) }}" method="post">
       @csrf
+      @method('PUT')
       <input type="text" name="visitCount" value="{{ $apartment->visit_count }}">
     </form>
 
@@ -10,20 +11,23 @@
 
       setTimeout(function() {
 
-        let visitCount = document.getElementById('apartmentVisitCount').value;
-        let visitCountPlusOne = parseInt(visitCount) + 1;
-
-        document.getElementById('apartmentVisitCount').value = visitCountPlusOne;
-
-        let $formVar = $('form');
+        // let visitCount = document.getElementById('apartmentVisitCount').value;
+        // let visitCountPlusOne = parseInt(visitCount) + 1;
+        //
+        // document.getElementById('apartmentVisitCount').value = visitCountPlusOne;
+        //
+        // let $formVar = $('form');
 
         $.ajax({
-          url: $formVar.prop('{{ route('updateApartment', $apartment->id) }}'),
+          url: '{{ route('updateVisit', $apartment->id) }}',
           method: 'PUT',
-          data: $formVar.serialize()
+          // data: $formVar.serialize(),
+          headers: {
+            'X-CSRF-Token': '{{ csrf_token() }}'
+          } 
         });
       }, 1000);
-    </script> --}}
+    </script>
 
 
 

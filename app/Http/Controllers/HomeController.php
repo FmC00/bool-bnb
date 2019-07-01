@@ -139,13 +139,21 @@ class HomeController extends Controller
 
       $apartments = Apartment::find(intval($id));
 
-      $visitCount = $request->visitCount;
-      $apartment->visit_count = $visitCount;
-
       $apartments->update($validateData);
       $services = Service::find($validateData['service']);
       $apartments->services()->sync($services);
       return redirect('/');
+    }
+
+    public function updateVisit(Request $request, $id) {
+
+      $apartment = Apartment::findOrFail(intval($id));
+
+      // $visitCount = $request->visitCount;
+      // $apartment->visit_count = $visitCount;
+      $apartment->visit_count += 1;
+
+      $apartment->save();
     }
 
     public function destroy($id)
