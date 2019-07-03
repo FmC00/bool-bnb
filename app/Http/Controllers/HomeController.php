@@ -84,7 +84,7 @@ class HomeController extends Controller
       $apartment->user_id = Auth::user()->id;
       $apartment->image = $input['imagename'];
 
-      $apartment ->save();
+      $apartment->save();
 
       $services = Service::find($validateData['service']);
       $apartment->services()->attach($services);
@@ -98,51 +98,63 @@ class HomeController extends Controller
 
     public function statsApartment(Request $request)
     {
-      $id = $request->get('apartmentid');
+      $apartments = \Auth::user()->apartments;
+      $messages = \Auth::user()->messages;
 
-      $apartment = Apartment::findOrFail($id);
-
-      return view('page.stats-apartment-mockup', compact('apartment'));
+      return view('page.stats-apartment-mockup', compact('apartments', 'messages'));
     }
 
     public function messagesApartment()
     {
       $user_id = Auth::user()->id;
-      $messages = User::findOrFail($user_id)->messages;
+      $messages = User::findOrFail($user_id)->messages()->orderByDesc('created_at')->get();
 
       return view('page.sms', compact('messages'));
     }
 
-    public function edit($id)
+    public function editApartment($id)
     {
-      $apartments = Apartment::findOrFail($id);
+      $apartment = Apartment::findOrFail($id);
       $services = Service::all();
 
-      return view('pages.editPost', compact('apartment', 'services'));
+      return view('page.edit-apartment', compact('apartment', 'services'));
     }
 
     public function update(Request $request, $id)
     {
       $validateData = $request->validate([
 
-        'user_id'=> 'required',
         'name'=> 'required',
         'description' => 'required',
+        'price' => 'required',
         'rooms_number'=> 'required',
         'guests_number'=> 'required',
         'bathrooms'=> 'required',
         'area_sm'=> 'required',
         'address_lat' => 'required',
         'address_lon'=> 'required',
-        'image' => 'required'
+        'service' => ''
       ]);
 
-      $apartments = Apartment::find(intval($id));
+      $apartment = Apartment::findOrFail(intval($id));
 
-      $apartments->update($validateData);
+      $apartment->update($validateData);
       $services = Service::find($validateData['service']);
-      $apartments->services()->sync($services);
-      return redirect('/');
+      $apartment->services()->sync($services);
+
+      $apartment = Apartment::findOrFail(intval($id));
+
+      if ($request->image) {
+        $image = $request->file('image');
+        $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $input['imagename']);
+
+        $apartment->image = $input['imagename'];
+        $apartment->save();
+      }
+
+      return redirect('/myDashboard');
     }
 
     public function updateVisit(Request $request, $id) {

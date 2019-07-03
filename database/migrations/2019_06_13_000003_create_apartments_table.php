@@ -27,6 +27,7 @@ class CreateApartmentsTable extends Migration
             $table->float('address_lat', 10, 6);
             $table->float('address_lon', 10, 6);
             $table->string('image');
+            $table->integer('visit_count')->default(0);
             $table->timestamps();
         });
     }

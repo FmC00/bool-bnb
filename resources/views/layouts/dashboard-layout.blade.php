@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{-- mappa --}}
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
     <!-- CSS: MY STYLE -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <!-- JS: MY SCRIPT -->
@@ -38,14 +41,16 @@
 
           <div class="mt-5">
             <a href="{{route('myDashboard')}}">
-              <img src="" alt="" class="user-img">
+              <img src="../images/host.png" alt="" class="user-img">
             </a>
             <h4 class="mt-5 text-white mb-5">Benvenuto {{ Auth::user()->name }}</h4>
           </div>
           <hr class="w-75 mx-auto">
           <div class="w-100">
+            <button class="btn btn-left w-75 mt-2 mt-md-5"><a href="{{ route('myDashboard') }}"><i class="fas fa-home"></i>I miei appartamenti</a></button>
             <button class="btn btn-left w-75 mt-2 mt-md-5"><a href="{{ route('addApartment') }}"><i class="fas fa-plus-circle"></i>Aggiungi appartamento</a></button>
-            <button class="btn btn-left w-75 mt-2 mb-5 mt-md-5"><a href="{{ route('messagesApartment') }}"><i class="fas fa-envelope"></i>I miei messaggi</a></button>
+            <button class="btn btn-left w-75 mt-2 mt-md-5"><a href="{{ route('messagesApartment') }}"><i class="fas fa-envelope"></i>I miei messaggi</a></button>
+            <button class="btn btn-left w-75 mt-2 mb-5 mt-md-5"><a href="{{ route('statsApartment') }}"><i class="fas fa-chart-line"></i>Le mie statistiche</a></button>
           </div>
         </div>
         <div id="dashboard-right" class="col-12 col-md-9 bg-light d-flex flex-column justify-content-start justify-content-md-start vh-100">
@@ -83,7 +88,7 @@
                   @yield('right-options')
 
                   <a id="UserDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <img src="" alt="" class="user-img-dashboard">
+                    <img src="../images/host.png" alt="" class="user-img-dashboard">
                   </a>
 
                   <div id="LoggedDropdown" class="text-right dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">

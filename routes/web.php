@@ -21,6 +21,7 @@ Route::get('/myDashboard', 'HomeController@myDashboard')->name('myDashboard');
 
 Route::get('/addApartment', 'HomeController@addApartment')->name('addApartment');
 Route::post('/addApartment', 'HomeController@store')->name('storeApartment');
+Route::get('/editApartment/{id}', 'HomeController@editApartment')->name('editApartment');
 Route::put('/updateApartment/{id}', 'HomeController@update')->name('updateApartment');
 Route::put('/updateVisit/{id}', 'HomeController@updateVisit')->name('updateVisit');
 Route::delete('/destroyApartment/{id}', 'HomeController@destroy')->name('destroyApartment');

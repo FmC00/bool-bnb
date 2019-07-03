@@ -7,13 +7,13 @@ use App\Plan;
 
 class SubscriptionController extends Controller
 {
-    public function create(Request $request, Plan $plan)
+    public function create(Request $request)
     {
-        if($request->user()->subscribedToPlan($plan->braintree_plan, 'main')) {
-                return redirect()->route('home');
-        }
-
         $plan = Plan::findOrFail($request->get('plan'));
+
+        if($request->user()->subscribedToPlan($plan->braintree_plan, 'main')) {
+          return redirect()->route('home');
+        }
 
         $request->user()
             ->newSubscription('main', $plan->braintree_plan)
