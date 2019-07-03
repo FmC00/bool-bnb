@@ -25,7 +25,7 @@
              @method('DELETE')
              <button class="btn btn-bnb ml-2"><input class="d-none" type="submit" name="" value=""><i class="fas fa-trash-alt"></i></button>
            </form>
-           <button class="btn btn-bnb ml-2"><a href="{{ route('plans.index') }}"><i class="fas fa-bullhorn"></i></a></button>
+           <button class="btn btn-bnb ml-2"><a href="{{ route('plans.index', $apartment->id) }}"><i class="fas fa-bullhorn"></i></a></button>
            {{-- <button class="btn btn-bnb ml-2"><a href="{{ route('statsApartment',$apartment->id)}}"><i class="fas fa-chart-line"></i></a></button> --}}
            {{-- <form class="" action="{{route('statsApartment')}}" method="get">
              <input type="hidden" name="apartmentid" value="{{ $apartment->id}}">

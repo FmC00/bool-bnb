@@ -31,8 +31,8 @@ Route::get('/statsApartment', 'HomeController@statsApartment')->name('statsApart
 Route::get('/messagesApartment', 'HomeController@messagesApartment')->name('messagesApartment');
 
 Route::group(['middleware' => 'auth'], function() {
-  Route::get('/plans', 'PlanController@index')->name('plans.index');
-  Route::get('/plan/{plan}', 'PlanController@show')->name('plans.show');
+  Route::get('/plans/{id}', 'PlanController@index')->name('plans.index');
+  Route::get('/plan/{plan}/{id}', 'PlanController@show')->name('plans.show');
   Route::get('/braintree/token', 'BraintreeTokenController@index')->name('token');
   Route::post('/subscription', 'SubscriptionController@create')->name('subscription.create');
 });

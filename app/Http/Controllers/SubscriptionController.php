@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Plan;
+use App\Apartment;
 
 class SubscriptionController extends Controller
 {
@@ -11,11 +12,9 @@ class SubscriptionController extends Controller
     {
         $plan = Plan::findOrFail($request->get('plan'));
 
-        if($request->user()->subscribedToPlan($plan->braintree_plan, 'main')) {
-          return redirect()->route('home');
-        }
+        $apartment = Apartment::findOrFail($request->apartment_id);
 
-        $request->user()
+        $apartment
             ->newSubscription('main', $plan->braintree_plan)
             ->create($request->payment_method_nonce);
 

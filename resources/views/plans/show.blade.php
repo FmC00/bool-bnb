@@ -15,6 +15,8 @@
               <div id="dropin-container"></div>
               <hr>
               <input type="hidden" name="plan" value="{{ $plan->id }}">
+              <input type="hidden" name="apartment_id" value="{{ $id }}">
+
               <input id="payment-button" type="submit" class="btn btn-bnb d-none" value="Paga">
             </form>
           </div>

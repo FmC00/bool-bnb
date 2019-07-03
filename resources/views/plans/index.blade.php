@@ -17,8 +17,8 @@
                     <h5>{{ $plan->name }}</h5>
                     <h5>{{ number_format($plan->cost, 2)}} €</h5>
                     <h5>{{ $plan->description }}</h5>
-                    @if(!auth()->user()->subscribedToPlan($plan->braintree_plan, 'main'))
-                        <a href="{{ route('plans.show', $plan->slug) }}" class="btn btn-bnb pull-right">Scegli</a>
+                    @if(!$apartment->subscribedToPlan($plan->braintree_plan, 'main'))
+                        <a href="{{ route('plans.show', ['slug'=>$plan->slug, 'id'=>$apartment->id]) }}" class="btn btn-bnb pull-right">Scegli</a>
                     @endif
                   </div>
                 </li>

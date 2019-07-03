@@ -5,20 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Plan;
+use App\Apartment;
 
 class PlanController extends Controller
 {
-    public function index()
+    public function index(Request $request, $id)
     {
       $plans = Plan::all();
-      return view('plans.index', compact('plans'));
+      $apartment = Apartment::findOrFail($id);
+
+      return view('plans.index', compact('plans', 'apartment'));
     }
 
-    public function show(Plan $plan, Request $request)
+    public function show(Plan $plan, Request $request, $id)
     {
-      if($request->user()->subscribedToPlan($plan->braintree_plan, 'main')) {
-              return redirect()->route('home')->with('success', 'L\'appartamento è già stato sponsorizzato');
-      }
-      return view('plans.show', compact('plan'));
+      return view('plans.show', compact('plan', 'id'));
     }
 }

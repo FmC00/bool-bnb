@@ -28,6 +28,11 @@ class CreateApartmentsTable extends Migration
             $table->float('address_lon', 10, 6);
             $table->string('image');
             $table->integer('visit_count')->default(0);
+            $table->string('braintree_id')->nullable();
+            $table->string('paypal_email')->nullable();
+            $table->string('card_brand')->nullable();
+            $table->string('card_last_four')->nullable();
+            $table->timestamp('trial_ends_at')->nullable();
             $table->timestamps();
         });
     }

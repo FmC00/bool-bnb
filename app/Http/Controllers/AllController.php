@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use App\Service;
 use App\Message;
+use App\Subscription;
 
 class AllController extends Controller
 {
     function showHome() {
 
+      $sponsors = Subscription::all();
       $apartments = Apartment::all();
 
-      return view('page.homepage', compact('apartments'));
+      return view('page.homepage', compact('apartments', 'sponsors'));
     }
 
     function search(Request $request){
@@ -57,9 +59,10 @@ class AllController extends Controller
       ";
 
       $apartments = \DB::select($query);
+      $sponsors = Subscription::all();
 
       $services = Service::all();
-      return view('page.search-page', compact('location', 'lat', 'lon', 'services', 'apartments'));
+      return view('page.search-page', compact('location', 'lat', 'lon', 'services', 'apartments', 'sponsors'));
     }
 
     public function storeMessage(Request $request)
