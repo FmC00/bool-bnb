@@ -15,7 +15,8 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->bigInteger('apartment_id')->unsigned()->index();
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
             $table->string('name');
             $table->string('braintree_id');
             $table->string('braintree_plan');

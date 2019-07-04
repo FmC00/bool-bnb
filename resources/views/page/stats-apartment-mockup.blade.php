@@ -1,5 +1,5 @@
 @extends('layouts.dashboard-layout')
-@section('title', "Statistiche dell'appartamento")
+@section('title', "Le mie Statistiche")
 @section('right-options')
   {{-- right-options --}}
 @stop
@@ -19,12 +19,20 @@
 // generazione e dati del grafico delle views
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
-        labels: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug','Ago','Set','Ott','Nov','Dic'],
+        labels: [
+          @foreach ($apartments as $apartment)
+            '{{ $apartment->name }}',
+          @endforeach
+        ],
         datasets: [{
-            label: 'Visualizzazioni nel tempo',
-            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            label: 'visualizzazioni ricevute per appartamento',
+            data: [
+              @foreach ($apartments as $apartment)
+                {{ $apartment->visit_count }},
+              @endforeach
+            ],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -62,34 +70,41 @@ var myChart = new Chart(ctx, {
 });
 // generazione e dati del grafico dei messaggi
 var ctx = document.getElementById('myChart2').getContext('2d');
+var mesForMonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var index;
+@foreach ($messages as $message)
+  index = parseInt('{{ $message->created_at }}'.substring(5, 7)) - 1;
+  mesForMonth[index]++;
+@endforeach
+
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug','Ago','Set','Ott','Nov','Dic'],
+        labels: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago','Set','Ott', 'Nov','Dic'],
         datasets: [{
             label: 'Messaggi ricevuti nel tempo',
-            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            data: mesForMonth,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
+                // 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                // 'rgba(255, 206, 86, 0.2)',
+                // 'rgba(75, 192, 192, 0.2)',
+                // 'rgba(153, 102, 255, 0.2)',
+                // 'rgba(255, 159, 64, 0.2)',
+                // 'rgba(255, 99, 132, 0.2)',
+                // 'rgba(54, 162, 235, 0.2)',
+                // 'rgba(255, 206, 86, 0.2)',
+                // 'rgba(75, 192, 192, 0.2)',
+                // 'rgba(153, 102, 255, 0.2)',
+                // 'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
+                // 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                // 'rgba(255, 206, 86, 1)',
+                // 'rgba(75, 192, 192, 1)',
+                // 'rgba(153, 102, 255, 1)',
+                // 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
         }]

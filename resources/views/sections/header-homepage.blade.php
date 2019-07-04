@@ -34,7 +34,7 @@
           </span>
           <span class="nav-item dropdown">
               <a id="UserDropdown" class="mr-4" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                  Benvenuto {{ Auth::user()->name }}<span class="caret"><img src="" alt="" class="user-img"></span>
+                  Benvenuto {{ Auth::user()->name }}<span class="caret"><img src="../images/host.png" alt="" class="user-img"></span>
               </a>
 
               <div id="LoggedDropdown" class="text-right dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">

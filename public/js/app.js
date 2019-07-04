@@ -81374,6 +81374,11 @@ function geoSearch() {
           var address = result['address'];
           var str = "";
 
+          if (address['streetNumber']) {
+            var streetNumber = address['streetNumber'];
+            str += streetNumber + ", ";
+          }
+
           if (address['streetName']) {
             var streetName = address['streetName'];
             str += streetName + ", ";
@@ -81402,6 +81407,52 @@ function geoSearch() {
   }
 }
 
+function geoReverse() {
+  var lat = $('#geoReverse .lat').text();
+  var lon = $('#geoReverse .lon').text();
+
+  if (lat && lon) {
+    $.ajax({
+      url: 'https://api.tomtom.com/search/2/reverseGeocode/' + lat + ',' + lon + '.json',
+      method: 'GET',
+      data: {
+        key: 'OYwFfJFH4jBA3AMNykhlTAixWHywtdIR'
+      },
+      success: function success(inData) {
+        var address = inData['addresses'][0]['address'];
+        var str = "";
+
+        if (address['streetNumber']) {
+          var streetNumber = address['streetNumber'];
+          str += streetNumber + ", ";
+        }
+
+        if (address['streetName']) {
+          var streetName = address['streetName'];
+          str += streetName + ", ";
+        }
+
+        if (address['municipality']) {
+          var municipality = address['municipality'];
+          str += municipality + ", ";
+        }
+
+        if (address['countrySubdivision']) {
+          var countrySubdivision = address['countrySubdivision'];
+          str += countrySubdivision + ", ";
+        }
+
+        if (address['country']) {
+          var country = address['country'];
+          str += country + " ";
+        }
+
+        $('#geoReverse .address').append(str);
+      }
+    });
+  }
+}
+
 function lonlatForm() {
   var me = $(this);
   var lon = me.data('lon');
@@ -81411,48 +81462,49 @@ function lonlatForm() {
   $('#lat').val(lat);
   $('.suggest-list').empty();
 } //Braintree Payment
+// function PaymentBraintree() {
+//
+//   braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
+//     container: 'dropin-container',
+//     paypal: {
+//       singleUse: true,
+//       // amount: 10.00,
+//       // currency: 'EUR',
+//       button: {
+//         type: 'checkout'
+//       }
+//     },
+//     onPaymentMethodReceived: function (obj) {
+//       // Do some logic in here.
+//       // When you're ready to submit the form:
+//       myForm.submit();
+//     }
+//   });
+// Options
+// https://developers.braintreepayments.com/guides/drop-in/setup-and-integration/javascript/v2
+// Guida Laravel Cashier
+// https://appdividend.com/2018/12/04/laravel-cashier-braintree-payment-gateway/
+// }
 
-
-function PaymentBraintree() {
-  braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
-    container: 'dropin-container',
-    paypal: {
-      // singleUse: true,
-      // amount: 10.00,
-      // currency: 'EUR',
-      button: {
-        type: 'checkout'
-      }
-    },
-    onPaymentMethodReceived: function onPaymentMethodReceived(obj) {
-      // Do some logic in here.
-      // When you're ready to submit the form:
-      myForm.submit();
-    }
-  }); // Options
-  // https://developers.braintreepayments.com/guides/drop-in/setup-and-integration/javascript/v2
-  // Guida Laravel Cashier
-  // https://appdividend.com/2018/12/04/laravel-cashier-braintree-payment-gateway/
-}
 
 function init() {
   hamburgerMenu();
   addTitle();
   $('#geoInput').on('keyup', geoSearch);
   $(document).on('click', '.suggest', lonlatForm);
+  geoReverse();
   Vue.component('apartment-card', {
     template: '#apartment-card',
     props: {
       title: String,
-      image: String,
-      location: String
+      price: String,
+      guests: String,
+      image: String
     }
   });
   new Vue({
     el: "#apartments-container"
-  });
-  PaymentBraintree(); // var input = $("#search_input");
-  // input.on('keyup', search);
+  }); // PaymentBraintree();
 }
 
 $(document).ready(init); // 'https://www.kettler.com/assets/images/AcadiaPoolNEW.jpg

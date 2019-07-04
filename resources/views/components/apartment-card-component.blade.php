@@ -4,14 +4,14 @@
       <img v-bind:src="image" class="w-100">
       </img>
     </div>
-    <div class="w-100">
-     <span class="text-secondary">@{{location}}</span>
+    <div class="w-100 mt-3">
+      <h4 class="mb-0">@{{ title }}</h4>
     </div>
-    <div class="w-100">
-     <h4 class="mb-0">@{{ title }}</h4>
+    <div class="w-100 mt-2">
+      <h6 class="mb-0">ospiti: @{{ guests }}</h6>
     </div>
-    <div class="w-80 stars">
-      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>(80)
+    <div class="w-100 mt-2">
+      <h5 class="mb-0">@{{ price }}€</h5>
     </div>
   </div>
 </script>

@@ -21,6 +21,7 @@ Route::get('/myDashboard', 'HomeController@myDashboard')->name('myDashboard');
 
 Route::get('/addApartment', 'HomeController@addApartment')->name('addApartment');
 Route::post('/addApartment', 'HomeController@store')->name('storeApartment');
+Route::get('/editApartment/{id}', 'HomeController@editApartment')->name('editApartment');
 Route::put('/updateApartment/{id}', 'HomeController@update')->name('updateApartment');
 Route::put('/updateVisit/{id}', 'HomeController@updateVisit')->name('updateVisit');
 Route::delete('/destroyApartment/{id}', 'HomeController@destroy')->name('destroyApartment');
@@ -30,8 +31,8 @@ Route::get('/statsApartment', 'HomeController@statsApartment')->name('statsApart
 Route::get('/messagesApartment', 'HomeController@messagesApartment')->name('messagesApartment');
 
 Route::group(['middleware' => 'auth'], function() {
-  Route::get('/plans', 'PlanController@index')->name('plans.index');
-  Route::get('/plan/{plan}', 'PlanController@show')->name('plans.show');
+  Route::get('/plans/{id}', 'PlanController@index')->name('plans.index');
+  Route::get('/plan/{plan}/{id}', 'PlanController@show')->name('plans.show');
   Route::get('/braintree/token', 'BraintreeTokenController@index')->name('token');
   Route::post('/subscription', 'SubscriptionController@create')->name('subscription.create');
 });

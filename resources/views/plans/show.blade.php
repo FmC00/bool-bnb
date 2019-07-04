@@ -15,13 +15,51 @@
               <div id="dropin-container"></div>
               <hr>
               <input type="hidden" name="plan" value="{{ $plan->id }}">
-              <button id="payment-button" type="submit" class="btn btn-bnb d-none">Paga</button>
+              <input type="hidden" name="apartment_id" value="{{ $id }}">
+
+              <input id="payment-button" type="submit" class="btn btn-bnb d-none" value="Paga">
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
+  <script>
+    $.ajax({
+        url: "{{ route('token') }}",
+    })
+    .done(function(res) {
+        braintree.setup(res.data.token, 'dropin', {
+            container: 'dropin-container',
+            onReady: function() {
+                $('#payment-button').removeClass('d-none')
+            }
+        });
+    });
+  </script>
+  {{-- <script type="text/javascript">
+  braintree.setup('sandbox_w32g833s_ksztvby6tg6d78cz', 'dropin', {
+    container: 'dropin-container',
+    paypal: {
+      singleUse: true,
+      amount: {{ $plan->cost }},
+      currency: 'EUR',
+      // button: {
+      //   type: 'checkout'
+      // }
+    },
+    onPaymentMethodReceived: function (obj) {
+      // Do some logic in here.
+      // When you're ready to submit the form:
+      myForm.submit();
+    }
+  });
+  // Options
+  // https://developers.braintreepayments.com/guides/drop-in/setup-and-integration/javascript/v2
+  // Guida Laravel Cashier
+  // https://appdividend.com/2018/12/04/laravel-cashier-braintree-payment-gateway/
+  </script> --}}
 @stop
 
-@include('components.braintree-script')
+{{-- @include('components.braintree-script') --}}

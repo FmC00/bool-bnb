@@ -19,12 +19,5 @@
        @include('sections.searchbar-homepage')
      </div>
      @include('sections.content-homepage')
-     <div class="container-fluid">
-       <footer class="row">
-        <div id="footer" class="col-12">
-          <h1>My Footer</h1>
-        </div>
-       </footer>
-     </div>
     </body>
  </html>

@@ -7,25 +7,62 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use App\Service;
 use App\Message;
+use App\Subscription;
 
 class AllController extends Controller
 {
     function showHome() {
 
+      $sponsors = Subscription::all();
       $apartments = Apartment::all();
 
-      return view('page.homepage', compact('apartments'));
+      return view('page.homepage', compact('apartments', 'sponsors'));
     }
 
     function search(Request $request){
+
       $location = $request -> location;
+
+      $query = "";
+
       $lat = $request -> lat;
       $lon = $request -> lon;
+      $dist = 20;
 
-      // $apartments = QUERY
+      if ($request->distance) {
+        $dist = $request->distance;
+      }
+
+      $query .= "
+        SELECT *
+        FROM apartments
+        WHERE (3959 * acos(cos(radians('" . $lat . "')) * cos(radians(address_lat)) * cos( radians(address_lon) - radians('" . $lon . "')) + sin(radians('" . $lat . "')) * sin(radians(address_lat)))) < " . $dist
+      ;
+
+      if ($request->guests_number) {
+        $guests = $request->guests_number;
+        $query .= "
+          AND guests_number >= " . $guests
+        ;
+      }
+
+      if ($request->rooms_number) {
+        $rooms = $request->rooms_number;
+        $query .= "
+          AND rooms_number >= " . $rooms
+        ;
+      }
+
+      $query .= "
+        ORDER BY (3959 * acos(cos(radians('" . $lat . "')) * cos(radians(address_lat)) * cos( radians(address_lon) - radians('" . $lon . "')) + sin(radians('" . $lat . "')) * sin(radians(address_lat))))
+        LIMIT 0 , 10
+      ";
+
+      $apartments = \DB::select($query);
+      $sponsors = Subscription::all();
 
       $services = Service::all();
-      return view('page.search-page', compact('location','services', 'apartments'));
+      return view('page.search-page', compact('location', 'lat', 'lon', 'services', 'apartments', 'sponsors'));
     }
 
     public function storeMessage(Request $request)
